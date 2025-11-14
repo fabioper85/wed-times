@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-lavishly: 'Lavishly Yours', cursive;
+  --font-lexend-deca: 'Lexend Deca', sans-serif;
+  --font-epilogue: 'Epilogue', sans-serif;
+}
