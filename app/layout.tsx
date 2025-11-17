@@ -1,14 +1,22 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Lavishly_Yours, Lexend_Deca } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const _geist = Geist({ subsets: ["latin"] });
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
+const lavishly = Lavishly_Yours({ 
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-lavishly',
+});
+
+const lexend = Lexend_Deca({ 
+  subsets: ['latin'],
+  variable: '--font-lexend',
+});
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
+  title: 'Fabio & Angie Wedding',
+  description: 'Join us in celebrating our special day',
   generator: 'v0.app',
   icons: {
     icon: [
@@ -36,7 +44,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans antialiased`}>
+      <body className={`${lavishly.variable} ${lexend.variable} font-lexend antialiased`}>
         {children}
         <Analytics />
       </body>
