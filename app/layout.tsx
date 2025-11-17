@@ -7,11 +7,13 @@ const lavishly = Lavishly_Yours({
   weight: '400',
   subsets: ['latin'],
   variable: '--font-lavishly',
+  display: 'swap',
 });
 
 const lexend = Lexend_Deca({ 
   subsets: ['latin'],
   variable: '--font-lexend',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {

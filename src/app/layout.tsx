@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Lavishly_Yours, Lexend_Deca, Epilogue } from "next/font/google";
+import { Lavishly_Yours, Lexend_Deca, Epilogue } from 'next/font/google';
 import "./globals.css";
 
 const lavishlyYours = Lavishly_Yours({
@@ -30,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${lavishlyYours.variable} ${lexendDeca.variable} ${epilogue.variable} font-sans`}>
+      <body className={`${lavishlyYours.variable} ${lexendDeca.variable} ${epilogue.variable} font-lexend-deca`}>
         {children}
       </body>
     </html>

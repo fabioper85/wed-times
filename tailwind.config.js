@@ -53,7 +53,8 @@ module.exports = {
       },
       fontFamily: {
         lavishly: ['var(--font-lavishly)'],
-        lexend: ['var(--font-lexend)'],
+        'lexend-deca': ['var(--font-lexend-deca)'],
+        epilogue: ['var(--font-epilogue)'],
       },
       keyframes: {
         'accordion-down': {
