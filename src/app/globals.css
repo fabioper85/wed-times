@@ -5,7 +5,9 @@
 @font-face {
   font-family: 'Rockidate';
   src: url('/fonts/Rockidate.woff2') format('woff2'),
-       url('/fonts/Rockidate.woff') format('woff');
+       url('/fonts/Rockidate.woff') format('woff'),
+       url('/fonts/Rockidate.ttf') format('truetype'),
+       url('/fonts/Rockidate.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
