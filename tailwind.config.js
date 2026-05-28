@@ -55,6 +55,7 @@ module.exports = {
         lavishly: ['var(--font-lavishly)'],
         'lexend-deca': ['var(--font-lexend-deca)'],
         epilogue: ['var(--font-epilogue)'],
+        rockidate: ['Rockidate', 'cursive'],
       },
       keyframes: {
         'accordion-down': {
