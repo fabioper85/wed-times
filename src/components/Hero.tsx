@@ -11,7 +11,7 @@ const Hero: React.FC = () => {
       >
         <div className="flex flex-col gap-2 text-center">
           <h1 className="font-rockidate text-white text-6xl leading-tight tracking-[-0.033em] sm:text-8xl">
-            Fabio & Angie
+            Angie & Fabio
           </h1>
           <h2 className="font-lexend-deca text-white text-sm font-normal leading-normal sm:text-base sm:font-normal sm:leading-normal">
             We&apos;re getting married!
