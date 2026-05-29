@@ -10,12 +10,9 @@ const Hero: React.FC = () => {
         }}
       >
         <div className="flex flex-col gap-2 text-center">
-          <h1 className="font-rockidate text-white text-6xl leading-tight tracking-[-0.033em] sm:text-8xl">
+          <h1 className="font-rockidate text-white text-5xl leading-tight tracking-[-0.033em] sm:text-7xl md:text-8xl">
             Angie & Fabio
           </h1>
-          <h2 className="font-lexend-deca text-white text-sm font-normal leading-normal sm:text-base sm:font-normal sm:leading-normal">
-            We&apos;re getting married!
-          </h2>
         </div>
         <button className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 sm:h-12 sm:px-5 bg-[#d46211] text-white text-sm font-bold leading-normal tracking-[0.015em] sm:text-base sm:font-bold sm:leading-normal sm:tracking-[0.015em] font-lexend-deca">
           <span className="truncate">View Our Story</span>
