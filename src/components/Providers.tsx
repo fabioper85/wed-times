@@ -76,7 +76,7 @@ export default function Providers() {
             role="dialog"
             aria-modal="true"
             aria-labelledby="provider-dialog-title"
-            className="relative w-full max-w-md rounded-3xl bg-[#fcf7d6] p-7 text-center shadow-2xl sm:p-9"
+            className="relative w-full max-w-md rounded-3xl bg-white p-7 text-center shadow-2xl sm:p-9"
             onClick={(event) => event.stopPropagation()}
           >
             <button
