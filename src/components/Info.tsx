@@ -24,8 +24,11 @@ const Info: React.FC = () => {
   return (
     <div className="py-24">
       <section className="mx-auto max-w-3xl px-4 text-center" aria-labelledby="welcome-message-title">
-        <h2 id="welcome-message-title" className="font-rockidate text-4xl leading-tight text-[#181411] sm:text-5xl">
-          Ebbene sì Ladies and Gentlemen: ci sposiamo! 🙂 ❤️
+        <h2 id="welcome-message-title" className="text-4xl leading-tight text-[#181411] sm:text-5xl">
+          <span className="font-lexend-deca text-base leading-8 sm:text-lg">
+            Ebbene sì Ladies and Gentlemen:
+          </span>{' '}
+          <span className="font-rockidate">ci sposiamo! 🙂 ❤️</span>
         </h2>
         <p className="mx-auto mt-6 max-w-2xl font-lexend-deca text-base leading-8 text-[#181411]/80 sm:text-lg">
           Nell’attesa di celebrare insieme il nostro grande giorno ti lasciamo la possibilità di curiosare in libertà in questo sito. Oltre alle informazioni essenziali relative all’evento troverai altro materiale inedito per immergerti nella nostra piccola grande storia. Buona esplorazione.
