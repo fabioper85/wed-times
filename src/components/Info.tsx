@@ -29,7 +29,7 @@ const Info: React.FC = () => {
             Ebbene sì Ladies and Gentlemen:
           </span>
           <br />
-          <span className="font-rockidate">ci sposiamo! 🙂 ❤️</span>
+          <span className="font-rockidate text-5xl sm:text-6xl">Ci sposiamo! 🙂 ❤️</span>
         </h2>
         <p className="mx-auto mt-6 max-w-2xl font-lexend-deca text-base leading-8 text-[#181411]/80 sm:text-lg">
           Nell’attesa di celebrare insieme il nostro grande giorno ti lasciamo la possibilità di curiosare in libertà in questo sito. Oltre alle informazioni essenziali relative all’evento troverai altro materiale inedito per immergerti nella nostra piccola grande storia. Buona esplorazione.
