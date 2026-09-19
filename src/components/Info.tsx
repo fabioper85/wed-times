@@ -23,21 +23,31 @@ const Info: React.FC = () => {
 
   return (
     <div className="py-24">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center px-4">
+      <section className="mx-auto max-w-3xl px-4 text-center" aria-labelledby="welcome-message-title">
+        <h2 id="welcome-message-title" className="font-rockidate text-4xl leading-tight text-[#181411] sm:text-5xl">
+          Ebbene sì Ladies and Gentlemen: ci sposiamo! 🙂 ❤️
+        </h2>
+        <p className="mx-auto mt-6 max-w-2xl font-lexend-deca text-base leading-8 text-[#181411]/80 sm:text-lg">
+          Nell’attesa di celebrare insieme il nostro grande giorno ti lasciamo la possibilità di curiosare in libertà in questo sito. Oltre alle informazioni essenziali relative all’evento troverai altro materiale inedito per immergerti nella nostra piccola grande storia. Buona esplorazione.
+        </p>
+      </section>
+
+      <Countdown target={weddingTimestamp} />
+
+      <div className="mt-20 grid grid-cols-1 gap-8 px-4 text-center md:grid-cols-3">
         <div className="flex flex-col items-center gap-4">
-          <h3 className="font-rockidate text-4xl sm:text-5xl text-[#181411]">Data</h3>
+          <h3 className="font-rockidate text-4xl text-[#181411] sm:text-5xl">Data</h3>
           <p className="font-lexend-deca text-2xl text-[#181411]">{dateString}</p>
         </div>
         <div className="flex flex-col items-center gap-4">
-          <h3 className="font-rockidate text-4xl sm:text-5xl text-[#181411]">Orario</h3>
+          <h3 className="font-rockidate text-4xl text-[#181411] sm:text-5xl">Orario</h3>
           <p className="font-lexend-deca text-2xl text-[#181411]">{timeString}</p>
         </div>
         <div className="flex flex-col items-center gap-4">
-          <h3 className="font-rockidate text-4xl sm:text-5xl text-[#181411]">Location</h3>
+          <h3 className="font-rockidate text-4xl text-[#181411] sm:text-5xl">Location</h3>
           <p className="font-lexend-deca text-lg text-[#181411]">{location}</p>
         </div>
       </div>
-      <Countdown target={weddingTimestamp} />
 
       <section className="mt-20 px-4" aria-labelledby="wedding-roadmap-title">
         <div className="mx-auto max-w-3xl text-center">

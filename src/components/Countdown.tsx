@@ -42,7 +42,7 @@ const Countdown = ({ target }: { target: number }) => {
   return (
     <section aria-label="Conto alla rovescia per il matrimonio" className="mt-16 border-t border-[#e8e0d9] pt-12 text-center">
       <p className="font-lexend-deca text-xs font-semibold uppercase tracking-[0.28em] text-[#897261]">
-        Manca sempre meno
+        ARE YOU READY?!
       </p>
       <h2 className="mt-3 font-rockidate text-5xl text-[#181411] sm:text-6xl">Ci vediamo tra</h2>
       <div className="mx-auto mt-8 grid max-w-3xl grid-cols-2 gap-x-6 gap-y-7 sm:grid-cols-4 sm:gap-x-8" aria-live="polite">
