@@ -143,6 +143,23 @@ const Info: React.FC = () => {
           className="mx-auto h-auto w-full"
         />
       </figure>
+
+      <section className="mx-auto mt-16 max-w-3xl px-4 text-right" aria-labelledby="music-title">
+        <h2 id="music-title" className="font-rockidate text-5xl text-[#181411] sm:text-6xl">
+          La musica
+        </h2>
+        <div className="mt-6 flex flex-col gap-5 font-lexend-deca text-base leading-8 text-[#181411]/75 sm:text-lg sm:leading-9">
+          <p>
+            Casa nostra è chiamata affettuosamente “al Riff” e chi ci conosce bene sa quanto entrambi amiamo la musica in tutte le sue sfumature. Insomma... <strong>o andiamo ad un concerto, o andiamo in moto, o andiamo ad un concerto in moto</strong>.
+          </p>
+          <p>
+            Per il nostro matrimonio abbiamo scelto una selezione di brani pop rock da party scatenato con qualche piccola chicca extra, unita all’intrattenimento live dei <strong>Fratelli Pleasure Orchestra, una band esperta di Swing’n’Roll</strong> che siamo sicuri vi farà ballare e divertire da matti!
+          </p>
+          <p className="text-4xl leading-none" aria-label="Musica e ballo">
+            🎶 🎵 💃 🕺 🪩
+          </p>
+        </div>
+      </section>
     </div>
   );
 };
