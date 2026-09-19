@@ -63,10 +63,6 @@ const Info: React.FC = () => {
             celebreremo quindi un rito simbolico. Verremo accompagnati “all’altare” da entrambi i nostri genitori e le
             nostre fedi passeranno di mano in mano tra gli invitati, accogliendo tutto l’affetto possibile.
           </p>
-          <p className="mt-8">*FOTO SPOSI*</p>
-          <p className="mt-8">Wedding Site</p>
-          <p>Timer Contatore</p>
-          <p className="mt-8">*CARICATURA DIGITALE “CASQUE’!”*</p>
           <p className="mt-8">
             Dopo il “sì” ci piaceva l’idea di una serata dinamica, per cui sarà previsto un buffet “open sitting” (potrai
             quindi sederti dove vorrai) con diverse isole tematiche e portate di cibo a scaglioni. I più piccini, invece,
