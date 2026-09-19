@@ -53,6 +53,40 @@ const Info: React.FC = () => {
         </div>
       </div>
 
+      <section className="mx-auto mt-20 max-w-3xl px-4 text-left" aria-labelledby="spoiler-title">
+        <h2 id="spoiler-title" className="font-rockidate text-5xl text-[#181411] sm:text-6xl">
+          Qualche spoiler
+        </h2>
+        <div className="mt-8 font-lexend-deca text-base leading-8 text-[#181411]/80 sm:text-lg">
+          <p>
+            La nostra sarà un’unione civile e firmeremo ufficialmente in Comune. Insieme a te, il 29 Maggio,
+            celebreremo quindi un rito simbolico. Verremo accompagnati “all’altare” da entrambi i nostri genitori e le
+            nostre fedi passeranno di mano in mano tra gli invitati, accogliendo tutto l’affetto possibile.
+          </p>
+          <p className="mt-8">*FOTO SPOSI*</p>
+          <p className="mt-8">Wedding Site</p>
+          <p>Timer Contatore</p>
+          <p className="mt-8">*CARICATURA DIGITALE “CASQUE’!”*</p>
+          <p className="mt-8">
+            Dopo il “sì” ci piaceva l’idea di una serata dinamica, per cui sarà previsto un buffet “open sitting” (potrai
+            quindi sederti dove vorrai) con diverse isole tematiche e portate di cibo a scaglioni. I più piccini, invece,
+            avranno un pic-nic tutto per loro e intrattenimento dedicato.
+          </p>
+          <p className="mt-8">
+            Confidando in una splendida giornata di sole (toccamose va’!), avrai a disposizione all’interno del
+            complesso un grande giardino dove chiacchierare, ridere e ballare insieme a noi.
+          </p>
+          <p className="mt-8">
+            Non è richiesto uno specifico dress-code, desideriamo che i nostri ospiti si sentano a loro agio nei vestiti che
+            preferiscono. Ciò che ci sentiamo di consigliare è un bel paio di scarpe comode di scorta!
+          </p>
+          <p className="mt-8">
+            Ultimo ma non meno importante: abbiamo cercato di rendere questa giornata il più etica possibile,
+            scegliendo dove si poteva materiali riciclabili e biodegradabili.
+          </p>
+        </div>
+      </section>
+
       <section className="mt-20 px-4" aria-labelledby="wedding-roadmap-title">
         <div className="mx-auto max-w-3xl text-center">
           <p className="font-lexend-deca text-sm uppercase tracking-[0.24em] text-[#181411]/60">
