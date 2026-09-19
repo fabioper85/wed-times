@@ -90,7 +90,7 @@ export default function Providers() {
             <p className="font-lexend-deca text-xs font-semibold uppercase tracking-[0.18em] text-[#181411]/55">
               {selected.category}
             </p>
-            <h3 id="provider-dialog-title" className="mt-4 font-rockidate text-4xl text-[#181411]">
+            <h3 id="provider-dialog-title" className="mt-4 font-lexend-deca text-2xl font-semibold text-[#181411]">
               {selected.name}
             </h3>
             {selected.href ? (
