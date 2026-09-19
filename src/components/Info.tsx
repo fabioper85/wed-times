@@ -150,10 +150,13 @@ const Info: React.FC = () => {
         </h2>
         <div className="mt-6 flex flex-col gap-5 font-lexend-deca text-base leading-8 text-[#181411]/75 sm:text-lg sm:leading-9">
           <p>
-            {`Casa nostra è chiamata affettuosamente “al Riff” e chi ci conosce bene sa quanto entrambi amiamo la musica in tutte le sue sfumature. Insomma... o andiamo ad un concerto, o andiamo in moto, o andiamo ad un concerto in moto.`}
+            Casa nostra è chiamata affettuosamente “al Riff” e chi ci conosce bene sa quanto entrambi amiamo la musica in tutte le sue sfumature. Insomma... <strong>o andiamo ad un concerto, o andiamo in moto, o andiamo ad un concerto in moto</strong>.
           </p>
           <p>
-            {`Per il nostro matrimonio abbiamo scelto una selezione di brani pop rock da party scatenato con qualche piccola chicca extra, unita all’intrattenimento live dei Fratelli Pleasure Orchestra, una band esperta di Swing’n’Roll che siamo sicuri vi farà ballare e divertire da matti!`}
+            Per il nostro matrimonio abbiamo scelto una selezione di brani pop rock da party scatenato con qualche piccola chicca extra, unita all’intrattenimento live dei <strong>Fratelli Pleasure Orchestra, una band esperta di Swing’n’Roll</strong> che siamo sicuri vi farà ballare e divertire da matti!
+          </p>
+          <p className="text-4xl leading-none" aria-label="Musica e ballo">
+            🎶 🎵 💃 🕺 🪩
           </p>
         </div>
       </section>
