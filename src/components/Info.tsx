@@ -1,8 +1,9 @@
 import React from 'react';
+import Countdown from './Countdown';
 
 const Info: React.FC = () => {
-  const weddingTimestamp = process.env.NEXT_PUBLIC_WEDDING_DATE_TIME_TICK 
-    ? parseInt(process.env.NEXT_PUBLIC_WEDDING_DATE_TIME_TICK) 
+  const weddingTimestamp = process.env.NEXT_PUBLIC_WEDDING_DATE_TIME_TICK
+    ? parseInt(process.env.NEXT_PUBLIC_WEDDING_DATE_TIME_TICK, 10)
     : Date.now();
   const weddingDate = new Date(weddingTimestamp);
   
@@ -37,6 +38,7 @@ const Info: React.FC = () => {
           <p className="font-lexend-deca text-lg text-[#181411]">{location}</p>
         </div>
       </div>
+      <Countdown target={weddingTimestamp} />
     </div>
   );
 };
