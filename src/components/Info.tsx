@@ -135,6 +135,14 @@ const Info: React.FC = () => {
           ))}
         </ol>
       </section>
+
+      <figure className="mx-auto mt-16 max-w-4xl px-4" aria-label="Illustrazione degli sposi che festeggiano">
+        <img
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/rock_wedding-2nCjQY9B7VKwEOdjRt0oab8iq7wGXe.jpg"
+          alt="Illustrazione degli sposi mentre festeggiano insieme"
+          className="mx-auto h-auto w-full"
+        />
+      </figure>
     </div>
   );
 };
