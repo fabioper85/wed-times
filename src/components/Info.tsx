@@ -1,4 +1,5 @@
 import React from 'react';
+import { CakeSlice, GlassWater, Gem, PartyPopper } from 'lucide-react';
 import Countdown from './Countdown';
 
 const Info: React.FC = () => {
@@ -36,6 +37,47 @@ const Info: React.FC = () => {
         </div>
       </div>
       <Countdown target={weddingTimestamp} />
+
+      <section className="mt-20 px-4" aria-labelledby="wedding-roadmap-title">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="font-lexend-deca text-sm uppercase tracking-[0.24em] text-[#181411]/60">
+            Programma della giornata
+          </p>
+          <h2
+            id="wedding-roadmap-title"
+            className="mt-3 font-rockidate text-5xl text-[#181411] sm:text-6xl"
+          >
+            Wedding roadmap
+          </h2>
+        </div>
+
+        <ol className="mx-auto mt-10 grid max-w-3xl gap-4" aria-label="Programma del matrimonio">
+          {[
+            { title: 'WE DO!', detail: 'Cerimonia', time: '17:00', Icon: Gem },
+            { title: 'WE EAT!', detail: 'Cena a buffet', time: '18:30', Icon: GlassWater },
+            { title: 'WE CAKE!', detail: 'Taglio torta', time: '21:30', Icon: CakeSlice },
+            { title: 'WE PARTY!', detail: 'Open bar + DJ set', time: '22:30', Icon: PartyPopper },
+          ].map(({ title, detail, time, Icon }) => (
+            <li
+              key={title}
+              className="grid grid-cols-[1fr_auto] items-center gap-5 rounded-2xl border border-[#181411]/10 bg-[#fffaf5] px-5 py-5 shadow-[0_8px_24px_rgba(24,20,17,0.06)] sm:grid-cols-[1fr_auto_auto] sm:px-7"
+            >
+              <div>
+                <p className="font-lexend-deca text-xs font-semibold tracking-[0.18em] text-[#181411]/55">
+                  {title}
+                </p>
+                <p className="mt-1 font-lexend-deca text-lg text-[#181411] sm:text-xl">{detail}</p>
+              </div>
+              <div className="flex size-14 items-center justify-center rounded-full bg-[#f0dfd2] text-[#181411]" aria-hidden="true">
+                <Icon strokeWidth={1.5} className="size-7" />
+              </div>
+              <time className="col-start-1 row-start-2 font-lexend-deca text-2xl font-semibold tabular-nums text-[#181411] sm:col-start-auto sm:row-start-auto sm:text-3xl" dateTime={`2027-05-29T${time}:00+02:00`}>
+                {time}
+              </time>
+            </li>
+          ))}
+        </ol>
+      </section>
     </div>
   );
 };
