@@ -129,13 +129,13 @@ const Info: React.FC = () => {
                   aria-expanded={isOpen}
                   aria-controls={`roadmap-${title.replace(/[^a-z0-9]/gi, '').toLowerCase()}`}
                   onClick={() => setOpenRoadmapItem(isOpen ? null : title)}
-                  className="grid w-full grid-cols-[auto_1fr_auto] items-center gap-3 bg-white px-4 py-3 text-left transition-colors hover:bg-[var(--wedding-roadmap-icon-bg)]/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#181411]/40 sm:gap-5 sm:px-6"
+                  className="grid w-full grid-cols-[auto_1fr_auto] items-center gap-4 bg-white px-5 py-5 text-left transition-colors hover:bg-[var(--wedding-roadmap-icon-bg)]/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#181411]/40 sm:gap-6 sm:px-8 sm:py-6"
                 >
                   <div className="flex size-12 items-center justify-center rounded-full bg-[var(--wedding-roadmap-icon-bg)] text-2xl sm:size-14 sm:text-3xl" aria-hidden="true">
                     {emoji}
                   </div>
                   <div>
-                    <p className="font-lexend-deca text-xs font-semibold tracking-[0.18em] text-[#181411]/55">{title}</p>
+                    <p className="font-lexend-deca text-base font-semibold tracking-[0.18em] text-[#181411]/55 sm:text-lg">{title}</p>
                     <p className="mt-0.5 font-lexend-deca text-base text-[#181411] sm:text-lg">{detail}</p>
                   </div>
                   <div className="flex items-center gap-3">
@@ -182,6 +182,41 @@ const Info: React.FC = () => {
       </section>
 
       <Providers />
+
+      <section
+        className="mx-4 mt-24 overflow-hidden rounded-[2rem] border-4 border-[#181411] bg-[#1b1745] px-6 py-10 text-center shadow-[8px_8px_0_#f9d86f] sm:mx-auto sm:max-w-3xl sm:px-12"
+        aria-labelledby="quizposi-title"
+      >
+        <div className="mx-auto max-w-xl">
+          <p className="text-xs uppercase tracking-[0.2em] text-[#f9d86f]" style={{ fontFamily: '"Zen Dots", sans-serif' }}>
+            Insert coin to play
+          </p>
+          <h2 id="quizposi-title" className="mt-3 text-5xl uppercase leading-tight tracking-[-0.06em] text-white [text-shadow:4px_4px_0_#f27d9d] sm:text-6xl" style={{ fontFamily: '"Michroma", sans-serif' }}>
+            QuizPosi
+          </h2>
+          <p className="mt-6 text-base leading-8 text-white/90 sm:text-lg" style={{ fontFamily: '"Audiowide", sans-serif' }}>
+            Pensi di sapere tutto sui Perrace / Pacetta? Dimostralo con il nostro quiz!
+          </p>
+
+          <div className="mx-auto mt-8 flex w-fit flex-col items-center gap-3 rounded-2xl border-4 border-[#f9d86f] bg-white p-4 shadow-[5px_5px_0_#f27d9d]">
+            <div
+              className="grid size-36 grid-cols-7 gap-1 bg-white p-2 sm:size-44"
+              role="img"
+              aria-label="Placeholder per il QR code del quiz"
+            >
+              {Array.from({ length: 49 }, (_, index) => (
+                <span
+                  key={index}
+                  className={index % 3 === 0 || [0, 1, 7, 8, 6, 13, 42, 43, 48].includes(index) ? 'bg-[#1b1745]' : 'bg-transparent'}
+                />
+              ))}
+            </div>
+            <span className="text-xs uppercase tracking-[0.08em] text-[#1b1745]" style={{ fontFamily: '"Zen Dots", sans-serif' }}>
+              QR code in arrivo
+            </span>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
