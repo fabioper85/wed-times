@@ -188,13 +188,13 @@ const Info: React.FC = () => {
         aria-labelledby="quizposi-title"
       >
         <div className="mx-auto max-w-xl">
-          <p className="font-[family:var(--font-zen-dots)] text-xs uppercase tracking-[0.2em] text-[#f9d86f]">
+          <p className="text-xs uppercase tracking-[0.2em] text-[#f9d86f]" style={{ fontFamily: '"Zen Dots", sans-serif' }}>
             Insert coin to play
           </p>
-          <h2 id="quizposi-title" className="mt-3 font-[family:var(--font-michroma)] text-5xl uppercase leading-tight tracking-[-0.06em] text-white [text-shadow:4px_4px_0_#f27d9d] sm:text-6xl">
+          <h2 id="quizposi-title" className="mt-3 text-5xl uppercase leading-tight tracking-[-0.06em] text-white [text-shadow:4px_4px_0_#f27d9d] sm:text-6xl" style={{ fontFamily: '"Michroma", sans-serif' }}>
             QuizPosi
           </h2>
-          <p className="mt-6 font-[family:var(--font-audiowide)] text-base leading-8 text-white/90 sm:text-lg">
+          <p className="mt-6 text-base leading-8 text-white/90 sm:text-lg" style={{ fontFamily: '"Audiowide", sans-serif' }}>
             Pensi di sapere tutto sui Perrace / Pacetta? Dimostralo con il nostro quiz!
           </p>
 
@@ -211,7 +211,7 @@ const Info: React.FC = () => {
                 />
               ))}
             </div>
-            <span className="font-[family:var(--font-zen-dots)] text-xs uppercase tracking-[0.08em] text-[#1b1745]">
+            <span className="text-xs uppercase tracking-[0.08em] text-[#1b1745]" style={{ fontFamily: '"Zen Dots", sans-serif' }}>
               QR code in arrivo
             </span>
           </div>
