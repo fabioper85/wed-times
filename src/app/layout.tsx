@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bungee, Epilogue, Lexend_Deca, Press_Start_2P, Share_Tech_Mono, Lavishly_Yours } from 'next/font/google';
+import { Audiowide, Bungee, Epilogue, Lexend_Deca, Michroma, Press_Start_2P, Share_Tech_Mono, Zen_Dots, Lavishly_Yours } from 'next/font/google';
 import "./globals.css";
 
 const lavishlyYours = Lavishly_Yours({
@@ -36,6 +36,24 @@ const shareTechMono = Share_Tech_Mono({
   variable: "--font-share-tech-mono",
 });
 
+const michroma = Michroma({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-michroma",
+});
+
+const audiowide = Audiowide({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-audiowide",
+});
+
+const zenDots = Zen_Dots({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-zen-dots",
+});
+
 export const metadata: Metadata = {
   title: "The Wedding of Fabio & Angie",
   description: "Join us for the wedding of Fabio & Angie.",
@@ -48,7 +66,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${lavishlyYours.variable} ${lexendDeca.variable} ${epilogue.variable} ${bungee.variable} ${pressStart.variable} ${shareTechMono.variable} font-lexend-deca`}>
+      <body className={`${lavishlyYours.variable} ${lexendDeca.variable} ${epilogue.variable} ${bungee.variable} ${pressStart.variable} ${shareTechMono.variable} ${michroma.variable} ${audiowide.variable} ${zenDots.variable} font-lexend-deca`}>
         {children}
       </body>
     </html>

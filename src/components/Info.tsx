@@ -188,13 +188,13 @@ const Info: React.FC = () => {
         aria-labelledby="quizposi-title"
       >
         <div className="mx-auto max-w-xl">
-          <p className="font-[family:var(--font-share-tech-mono)] text-xs uppercase tracking-[0.35em] text-[#f9d86f]">
+          <p className="font-[family:var(--font-zen-dots)] text-xs uppercase tracking-[0.2em] text-[#f9d86f]">
             Insert coin to play
           </p>
-          <h2 id="quizposi-title" className="mt-3 font-[family:var(--font-press-start)] text-4xl uppercase leading-tight tracking-[-0.08em] text-white [text-shadow:4px_4px_0_#f27d9d] sm:text-6xl">
+          <h2 id="quizposi-title" className="mt-3 font-[family:var(--font-michroma)] text-5xl uppercase leading-tight tracking-[-0.06em] text-white [text-shadow:4px_4px_0_#f27d9d] sm:text-6xl">
             QuizPosi
           </h2>
-          <p className="mt-6 font-[family:var(--font-share-tech-mono)] text-base leading-8 text-white/90 sm:text-lg">
+          <p className="mt-6 font-[family:var(--font-audiowide)] text-base leading-8 text-white/90 sm:text-lg">
             Pensi di sapere tutto sui Perrace / Pacetta? Dimostralo con il nostro quiz!
           </p>
 
@@ -211,7 +211,7 @@ const Info: React.FC = () => {
                 />
               ))}
             </div>
-            <span className="font-[family:var(--font-bungee)] text-xs uppercase tracking-[0.12em] text-[#1b1745]">
+            <span className="font-[family:var(--font-zen-dots)] text-xs uppercase tracking-[0.08em] text-[#1b1745]">
               QR code in arrivo
             </span>
           </div>
