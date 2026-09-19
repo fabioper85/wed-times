@@ -188,13 +188,13 @@ const Info: React.FC = () => {
         aria-labelledby="quizposi-title"
       >
         <div className="mx-auto max-w-xl">
-          <p className="font-lexend-deca text-xs font-bold uppercase tracking-[0.35em] text-[#f9d86f]">
+          <p className="font-mono text-xs font-black uppercase tracking-[0.35em] text-[#f9d86f]">
             Insert coin to play
           </p>
-          <h2 id="quizposi-title" className="mt-3 font-rockidate text-6xl uppercase leading-none text-white sm:text-8xl">
+          <h2 id="quizposi-title" className="mt-3 font-mono text-6xl font-black uppercase leading-none tracking-[-0.08em] text-white [text-shadow:4px_4px_0_#f27d9d] sm:text-8xl">
             QuizPosi
           </h2>
-          <p className="mt-6 font-lexend-deca text-base leading-8 text-white/90 sm:text-lg">
+          <p className="mt-6 font-mono text-base font-bold leading-8 text-white/90 sm:text-lg">
             Pensi di sapere tutto sui Perrace / Pacetta? Dimostralo con il nostro quiz!
           </p>
 
@@ -211,7 +211,7 @@ const Info: React.FC = () => {
                 />
               ))}
             </div>
-            <span className="font-lexend-deca text-xs font-bold uppercase tracking-[0.16em] text-[#1b1745]">
+            <span className="font-mono text-xs font-black uppercase tracking-[0.16em] text-[#1b1745]">
               QR code in arrivo
             </span>
           </div>
