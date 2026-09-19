@@ -31,6 +31,7 @@ const providers: Provider[] = [
 
 export default function Providers() {
   const [selected, setSelected] = useState<Provider | null>(null);
+  const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
 
   return (
     <section className="mx-auto mt-20 max-w-5xl px-4" aria-labelledby="providers-title">
@@ -43,14 +44,23 @@ export default function Providers() {
         </p>
       </div>
 
-      <div className="mx-auto mt-10 flex max-w-4xl flex-wrap items-center justify-center gap-x-4 gap-y-5 sm:gap-x-7 sm:gap-y-7">
+      <div className="mx-auto mt-10 flex max-w-3xl flex-wrap items-center justify-center gap-x-2 gap-y-2 sm:gap-x-3 sm:gap-y-3">
         {providers.map((provider, index) => (
           <button
             key={provider.category}
             type="button"
             onClick={() => setSelected(provider)}
-            className="font-lexend-deca text-[#181411] underline decoration-[#181411]/20 underline-offset-4 transition-transform hover:-translate-y-1 hover:decoration-[#181411]/60 focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#181411]/40"
-            style={{ fontSize: `${Math.max(0.95, 1.05 + ((index * 7) % 5) / 10)}rem` }}
+            onMouseEnter={() => setHoveredCategory(provider.category)}
+            onMouseLeave={() => setHoveredCategory(null)}
+            onFocus={() => setHoveredCategory(provider.category)}
+            onBlur={() => setHoveredCategory(null)}
+            className="font-lexend-deca text-[#181411] underline decoration-[#181411]/20 underline-offset-4 transition-[transform,color,text-shadow] duration-300 ease-out hover:-translate-y-0.5 hover:decoration-[#181411]/60 focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#181411]/40"
+            style={{
+              fontSize: `${Math.max(0.95, 1.05 + ((index * 7) % 5) / 10)}rem`,
+              transform: hoveredCategory === provider.category ? 'scale(1.2)' : undefined,
+              color: hoveredCategory === provider.category ? '#a8445f' : undefined,
+              textShadow: hoveredCategory === provider.category ? '0 6px 18px rgba(168, 68, 95, 0.2)' : undefined,
+            }}
           >
             {provider.category}
           </button>
