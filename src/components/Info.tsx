@@ -118,18 +118,18 @@ const Info: React.FC = () => {
           ].map(({ title, detail, time, Icon }) => (
             <li
               key={title}
-              className="grid grid-cols-[1fr_auto] items-center gap-5 rounded-2xl border border-[#181411]/10 bg-[var(--wedding-roadmap-bg)] px-5 py-5 shadow-[0_8px_24px_rgba(24,20,17,0.06)] sm:grid-cols-[1fr_auto_auto] sm:px-7"
+              className="grid grid-cols-[auto_1fr_auto] items-center gap-4 rounded-2xl border border-[#181411]/10 bg-[var(--wedding-roadmap-bg)] px-4 py-5 shadow-[0_8px_24px_rgba(24,20,17,0.06)] sm:gap-6 sm:px-7"
             >
+              <div className="flex size-18 items-center justify-center rounded-full bg-[var(--wedding-roadmap-icon-bg)] text-[#181411]" aria-hidden="true">
+                <Icon strokeWidth={1.5} className="size-9" />
+              </div>
               <div>
                 <p className="font-lexend-deca text-xs font-semibold tracking-[0.18em] text-[#181411]/55">
                   {title}
                 </p>
                 <p className="mt-1 font-lexend-deca text-lg text-[#181411] sm:text-xl">{detail}</p>
               </div>
-              <div className="flex size-14 items-center justify-center rounded-full bg-[var(--wedding-roadmap-icon-bg)] text-[#181411]" aria-hidden="true">
-                <Icon strokeWidth={1.5} className="size-7" />
-              </div>
-              <time className="col-start-1 row-start-2 font-lexend-deca text-2xl font-semibold tabular-nums text-[#181411] sm:col-start-auto sm:row-start-auto sm:text-3xl" dateTime={`2027-05-29T${time}:00+02:00`}>
+              <time className="font-lexend-deca text-2xl font-semibold tabular-nums text-[#181411] sm:text-3xl" dateTime={`2027-05-29T${time}:00+02:00`}>
                 {time}
               </time>
             </li>
