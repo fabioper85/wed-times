@@ -129,7 +129,7 @@ const Info: React.FC = () => {
                   aria-expanded={isOpen}
                   aria-controls={`roadmap-${title.replace(/[^a-z0-9]/gi, '').toLowerCase()}`}
                   onClick={() => setOpenRoadmapItem(isOpen ? null : title)}
-                  className="grid w-full grid-cols-[auto_1fr_auto] items-center gap-3 bg-[var(--wedding-roadmap-bg)] px-4 py-3 text-left transition-colors hover:bg-[var(--wedding-roadmap-icon-bg)]/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#181411]/40 sm:gap-5 sm:px-6"
+                  className="grid w-full grid-cols-[auto_1fr_auto] items-center gap-3 bg-white px-4 py-3 text-left transition-colors hover:bg-[var(--wedding-roadmap-icon-bg)]/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#181411]/40 sm:gap-5 sm:px-6"
                 >
                   <div className="flex size-12 items-center justify-center rounded-full bg-[var(--wedding-roadmap-icon-bg)] text-2xl sm:size-14 sm:text-3xl" aria-hidden="true">
                     {emoji}
@@ -146,7 +146,7 @@ const Info: React.FC = () => {
                 <div
                   id={`roadmap-${title.replace(/[^a-z0-9]/gi, '').toLowerCase()}`}
                   hidden={!isOpen}
-                  className="bg-[var(--wedding-roadmap-bg)] px-4 pb-4 pl-[4.75rem] font-lexend-deca text-sm leading-6 text-[#181411]/70 sm:pl-[5.75rem]"
+                  className="bg-white px-4 pb-4 pl-[4.75rem] font-lexend-deca text-sm leading-6 text-[#181411]/70 sm:pl-[5.75rem]"
                 >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 </div>
