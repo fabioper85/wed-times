@@ -1,6 +1,7 @@
 import React from 'react';
 import { CakeSlice, GlassWater, Gem, PartyPopper } from 'lucide-react';
 import Countdown from './Countdown';
+import Providers from './Providers';
 
 const Info: React.FC = () => {
   // 15:00 in Italy on 29 May 2027 (CEST, UTC+02:00).
@@ -160,6 +161,8 @@ const Info: React.FC = () => {
           </p>
         </div>
       </section>
+
+      <Providers />
     </div>
   );
 };
