@@ -35,6 +35,9 @@
     --input: 0 0% 89.8%;
     --ring: 0 0% 63.9%;
     --radius: 0.5rem;
+    --wedding-roadmap-bg: #fcf7d6;
+    --wedding-roadmap-icon-bg: #f9d86f;
+    --wedding-accent: #b08a00;
   }
 
   .dark {

@@ -57,7 +57,7 @@ export default function Providers() {
             className="font-lexend-deca text-sm uppercase tracking-[0.08em] text-[#181411] underline decoration-[#181411]/20 underline-offset-4 transition-[transform,color,text-shadow] duration-300 ease-out hover:-translate-y-0.5 hover:decoration-[#181411]/60 sm:text-base focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#181411]/40"
             style={{
               transform: hoveredCategory === provider.category ? 'scale(1.08)' : undefined,
-              color: hoveredCategory === provider.category ? '#a8445f' : undefined,
+              color: hoveredCategory === provider.category ? 'var(--wedding-accent)' : undefined,
               textShadow: hoveredCategory === provider.category ? '0 6px 18px rgba(168, 68, 95, 0.2)' : undefined,
             }}
           >
@@ -76,14 +76,14 @@ export default function Providers() {
             role="dialog"
             aria-modal="true"
             aria-labelledby="provider-dialog-title"
-            className="relative w-full max-w-md rounded-3xl bg-[#fffaf5] p-7 text-center shadow-2xl sm:p-9"
+            className="relative w-full max-w-md rounded-3xl bg-[#fcf7d6] p-7 text-center shadow-2xl sm:p-9"
             onClick={(event) => event.stopPropagation()}
           >
             <button
               type="button"
               aria-label="Chiudi dettagli fornitore"
               onClick={() => setSelected(null)}
-              className="absolute right-4 top-4 rounded-full p-2 text-[#181411]/60 transition-colors hover:bg-[#f0dfd2] hover:text-[#181411] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#181411]/40"
+              className="absolute right-4 top-4 rounded-full p-2 text-[#181411]/60 transition-colors hover:bg-[#f1e7a9] hover:text-[#181411] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#181411]/40"
             >
               <X aria-hidden="true" />
             </button>
