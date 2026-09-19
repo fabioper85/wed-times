@@ -41,7 +41,7 @@ const Info: React.FC = () => {
       <section className="mt-20 px-4" aria-labelledby="wedding-roadmap-title">
         <div className="mx-auto max-w-3xl text-center">
           <p className="font-lexend-deca text-sm uppercase tracking-[0.24em] text-[#181411]/60">
-            Programma della giornata · Ora di Roma
+            Programma della giornata
           </p>
           <h2
             id="wedding-roadmap-title"
