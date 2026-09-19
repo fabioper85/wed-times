@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { CakeSlice, ChevronDown, GlassWater, Gem, PartyPopper } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import Countdown from './Countdown';
 import Providers from './Providers';
 
@@ -115,11 +115,11 @@ const Info: React.FC = () => {
 
         <ol className="mx-auto mt-10 max-w-3xl overflow-hidden rounded-2xl border border-[#181411]/10" aria-label="Programma del matrimonio">
           {[
-            { title: 'WE DO!', detail: 'Cerimonia', time: '17:00', Icon: Gem },
-            { title: 'WE EAT!', detail: 'Cena a buffet', time: '18:30', Icon: GlassWater },
-            { title: 'WE CAKE!', detail: 'Taglio torta', time: '21:30', Icon: CakeSlice },
-            { title: 'WE PARTY!', detail: 'Open bar + DJ set', time: '22:30', Icon: PartyPopper },
-          ].map(({ title, detail, time, Icon }) => {
+            { title: 'WE DO!', detail: 'Cerimonia', time: '17:00', emoji: '💍' },
+            { title: 'WE EAT!', detail: 'Cena a buffet', time: '18:30', emoji: '🍽️' },
+            { title: 'WE CAKE!', detail: 'Taglio torta', time: '21:30', emoji: '🍰' },
+            { title: 'WE PARTY!', detail: 'Open bar + DJ set', time: '22:30', emoji: '🎉' },
+          ].map(({ title, detail, time, emoji }) => {
             const isOpen = openRoadmapItem === title;
 
             return (
@@ -131,8 +131,8 @@ const Info: React.FC = () => {
                   onClick={() => setOpenRoadmapItem(isOpen ? null : title)}
                   className="grid w-full grid-cols-[auto_1fr_auto] items-center gap-3 bg-[var(--wedding-roadmap-bg)] px-4 py-3 text-left transition-colors hover:bg-[var(--wedding-roadmap-icon-bg)]/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#181411]/40 sm:gap-5 sm:px-6"
                 >
-                  <div className="flex size-12 items-center justify-center rounded-full bg-[var(--wedding-roadmap-icon-bg)] text-[#181411] sm:size-14" aria-hidden="true">
-                    <Icon strokeWidth={1.5} className="size-7 sm:size-8" />
+                  <div className="flex size-12 items-center justify-center rounded-full bg-[var(--wedding-roadmap-icon-bg)] text-2xl sm:size-14 sm:text-3xl" aria-hidden="true">
+                    {emoji}
                   </div>
                   <div>
                     <p className="font-lexend-deca text-xs font-semibold tracking-[0.18em] text-[#181411]/55">{title}</p>
