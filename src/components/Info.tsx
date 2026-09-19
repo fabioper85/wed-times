@@ -145,7 +145,7 @@ const Info: React.FC = () => {
       </figure>
 
       <section className="mx-auto mt-16 max-w-3xl px-4 text-right" aria-labelledby="music-title">
-        <h2 id="music-title" className="font-playfair-display text-4xl text-[#181411] sm:text-5xl">
+        <h2 id="music-title" className="font-rockidate text-5xl text-[#181411] sm:text-6xl">
           La musica
         </h2>
         <div className="mt-6 flex flex-col gap-5 font-lexend-deca text-base leading-8 text-[#181411]/75 sm:text-lg sm:leading-9">
