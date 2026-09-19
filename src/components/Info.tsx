@@ -27,7 +27,8 @@ const Info: React.FC = () => {
         <h2 id="welcome-message-title" className="text-4xl leading-tight text-[#181411] sm:text-5xl">
           <span className="font-lexend-deca text-base leading-8 sm:text-lg">
             Ebbene sì Ladies and Gentlemen:
-          </span>{' '}
+          </span>
+          <br />
           <span className="font-rockidate">ci sposiamo! 🙂 ❤️</span>
         </h2>
         <p className="mx-auto mt-6 max-w-2xl font-lexend-deca text-base leading-8 text-[#181411]/80 sm:text-lg">
