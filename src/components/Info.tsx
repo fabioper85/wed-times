@@ -45,7 +45,7 @@ const Info: React.FC = () => {
 
       <Countdown target={weddingTimestamp} />
 
-      <div className="mt-20 grid grid-cols-1 gap-12 px-4 text-center md:grid-cols-3 md:gap-16">
+      <div className="mt-32 grid grid-cols-1 gap-16 px-4 text-center md:grid-cols-3 md:gap-20">
         <div className="flex flex-col items-center gap-4">
           <h3 className="font-rockidate text-4xl text-[#181411] sm:text-5xl">Data</h3>
           <p className="font-lexend-deca text-base leading-8 text-[#181411]/80 sm:text-lg">{dateString}</p>
@@ -70,7 +70,7 @@ const Info: React.FC = () => {
         </div>
       </div>
 
-      <section className="mx-auto mt-20 max-w-3xl px-4 text-left" aria-labelledby="spoiler-title">
+      <section className="mx-auto mt-32 max-w-3xl px-4 text-left" aria-labelledby="spoiler-title">
         <h2 id="spoiler-title" className="font-rockidate text-5xl text-[#181411] sm:text-6xl">
           Qualche spoiler
         </h2>
@@ -100,7 +100,7 @@ const Info: React.FC = () => {
         </div>
       </section>
 
-      <section className="mt-20 px-4" aria-labelledby="wedding-roadmap-title">
+      <section className="mt-32 px-4" aria-labelledby="wedding-roadmap-title">
         <div className="mx-auto max-w-3xl text-center">
           <p className="font-lexend-deca text-sm uppercase tracking-[0.24em] text-[#181411]/60">
             Programma della giornata
@@ -156,7 +156,7 @@ const Info: React.FC = () => {
         </ol>
       </section>
 
-      <figure className="mx-auto mt-16 max-w-4xl px-4" aria-label="Illustrazione degli sposi che festeggiano">
+      <figure className="mx-auto mt-24 max-w-4xl px-4" aria-label="Illustrazione degli sposi che festeggiano">
         <img
           src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/rock_wedding-2nCjQY9B7VKwEOdjRt0oab8iq7wGXe.jpg"
           alt="Illustrazione degli sposi mentre festeggiano insieme"
@@ -164,7 +164,7 @@ const Info: React.FC = () => {
         />
       </figure>
 
-      <section className="mx-auto mt-16 max-w-3xl px-4 text-right" aria-labelledby="music-title">
+      <section className="mx-auto mt-24 max-w-3xl px-4 text-right" aria-labelledby="music-title">
         <h2 id="music-title" className="font-rockidate text-5xl text-[#181411] sm:text-6xl">
           La musica
         </h2>

@@ -34,7 +34,7 @@ export default function Providers() {
   const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
 
   return (
-    <section className="mx-auto mt-20 max-w-5xl px-4" aria-labelledby="providers-title">
+    <section className="mx-auto mt-24 max-w-5xl px-4" aria-labelledby="providers-title">
       <div className="text-center">
         <h2 id="providers-title" className="font-rockidate text-5xl text-[#181411] sm:text-6xl">
           I nostri fornitori
