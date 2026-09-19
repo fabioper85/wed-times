@@ -29,15 +29,15 @@ const Info: React.FC = () => {
   return (
     <div className="py-24">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center px-4">
-        <div className="flex flex-col items-center gap-2">
+        <div className="flex flex-col items-center gap-4">
           <h3 className="font-rockidate text-4xl sm:text-5xl text-[#181411]">Data</h3>
           <p className="font-lexend-deca text-2xl text-[#181411]">{dateString}</p>
         </div>
-        <div className="flex flex-col items-center gap-2">
+        <div className="flex flex-col items-center gap-4">
           <h3 className="font-rockidate text-4xl sm:text-5xl text-[#181411]">Orario</h3>
           <p className="font-lexend-deca text-2xl text-[#181411]">{timeString}</p>
         </div>
-        <div className="flex flex-col items-center gap-2">
+        <div className="flex flex-col items-center gap-4">
           <h3 className="font-rockidate text-4xl sm:text-5xl text-[#181411]">Location</h3>
           <p className="font-lexend-deca text-lg text-[#181411]">{location}</p>
         </div>
