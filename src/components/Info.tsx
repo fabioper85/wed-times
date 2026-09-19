@@ -3,15 +3,10 @@ import { CakeSlice, GlassWater, Gem, PartyPopper } from 'lucide-react';
 import Countdown from './Countdown';
 
 const Info: React.FC = () => {
-  const configuredWeddingDate = process.env.NEXT_PUBLIC_WEDDING_DATE_TIME_TICK;
-  const parsedWeddingTimestamp = configuredWeddingDate
-    ? Number.isNaN(Number(configuredWeddingDate))
-      ? Date.parse(configuredWeddingDate)
-      : Number(configuredWeddingDate)
-    : Number.NaN;
-  const weddingTimestamp = Number.isFinite(parsedWeddingTimestamp)
-    ? parsedWeddingTimestamp
-    : Date.parse('2027-05-29T15:00:00+02:00');
+  // 15:00 in Italy on 29 May 2027 (CEST, UTC+02:00).
+  // Keep this fixed to the confirmed wedding date instead of relying on a
+  // potentially stale or differently formatted environment value.
+  const weddingTimestamp = Date.UTC(2027, 4, 29, 13, 0, 0);
   const weddingDate = new Date(weddingTimestamp);
   const dateString = weddingDate.toLocaleDateString('it-IT', {
     year: 'numeric',
