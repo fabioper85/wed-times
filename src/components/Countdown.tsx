@@ -21,12 +21,20 @@ const getTimeLeft = (target: number): TimeLeft => {
 };
 
 const Countdown = ({ target }: { target: number }) => {
-  const [timeLeft, setTimeLeft] = useState<TimeLeft>(() => getTimeLeft(target));
+  // Keep the first render identical on the server and client. The live value is
+  // populated immediately after hydration, then refreshed once per second.
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
 
   useEffect(() => {
-    const interval = window.setInterval(() => {
-      setTimeLeft(getTimeLeft(target));
-    }, 1000);
+    const updateTimeLeft = () => setTimeLeft(getTimeLeft(target));
+
+    updateTimeLeft();
+    const interval = window.setInterval(updateTimeLeft, 1000);
 
     return () => window.clearInterval(interval);
   }, [target]);
