@@ -20,6 +20,8 @@ const Info: React.FC = () => {
     timeZone: 'Europe/Rome',
   });
   const location = 'Cascina Reale Cussanio a Fossano';
+  const locationAddress = process.env.NEXT_PUBLIC_WEDDING_LOCATION_ADDRESS ?? 'Cascina Reale Cussanio, Via S. Maria, 12045 Fossano CN';
+  const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(locationAddress)}`;
 
   return (
     <div className="py-24">
@@ -38,7 +40,7 @@ const Info: React.FC = () => {
 
       <Countdown target={weddingTimestamp} />
 
-      <div className="mt-20 grid grid-cols-1 gap-8 px-4 text-center md:grid-cols-3">
+      <div className="mt-20 grid grid-cols-1 gap-12 px-4 text-center md:grid-cols-3 md:gap-16">
         <div className="flex flex-col items-center gap-4">
           <h3 className="font-rockidate text-4xl text-[#181411] sm:text-5xl">Data</h3>
           <p className="font-lexend-deca text-base leading-8 text-[#181411]/80 sm:text-lg">{dateString}</p>
@@ -49,7 +51,17 @@ const Info: React.FC = () => {
         </div>
         <div className="flex flex-col items-center gap-4">
           <h3 className="font-rockidate text-4xl text-[#181411] sm:text-5xl">Location</h3>
-          <p className="font-lexend-deca text-base leading-8 text-[#181411]/80 sm:text-lg">{location}</p>
+          <p className="font-lexend-deca text-base leading-8 text-[#181411]/80 sm:text-lg">
+            <a
+              href={mapsUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="underline decoration-[#181411]/30 underline-offset-4 transition-colors hover:decoration-[#181411] focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#181411]/40"
+              aria-label={`Apri ${locationAddress} su Google Maps`}
+            >
+              {location}
+            </a>
+          </p>
         </div>
       </div>
 
