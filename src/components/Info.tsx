@@ -113,7 +113,7 @@ const Info: React.FC = () => {
           </h2>
         </div>
 
-        <ol className="mx-auto mt-10 max-w-3xl" aria-label="Programma del matrimonio">
+        <ol className="mx-auto mt-10 max-w-3xl overflow-hidden rounded-2xl border border-[#181411]/10" aria-label="Programma del matrimonio">
           {[
             { title: 'WE DO!', detail: 'Cerimonia', time: '17:00', Icon: Gem },
             { title: 'WE EAT!', detail: 'Cena a buffet', time: '18:30', Icon: GlassWater },
@@ -123,7 +123,7 @@ const Info: React.FC = () => {
             const isOpen = openRoadmapItem === title;
 
             return (
-              <li key={title} className="border-b border-[#181411]/10 first:rounded-t-2xl last:rounded-b-2xl first:border-t">
+              <li key={title} className="border-b border-[#181411]/10 last:border-b-0">
                 <button
                   type="button"
                   aria-expanded={isOpen}
