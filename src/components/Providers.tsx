@@ -54,7 +54,7 @@ export default function Providers() {
             onMouseLeave={() => setHoveredCategory(null)}
             onFocus={() => setHoveredCategory(provider.category)}
             onBlur={() => setHoveredCategory(null)}
-            className="font-rockidate text-5xl text-[#181411] underline decoration-[#181411]/20 underline-offset-4 transition-[transform,color,text-shadow] duration-300 ease-out hover:-translate-y-0.5 hover:decoration-[#181411]/60 sm:text-6xl focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#181411]/40"
+            className="font-lexend-deca text-5xl text-[#181411] underline decoration-[#181411]/20 underline-offset-4 transition-[transform,color,text-shadow] duration-300 ease-out hover:-translate-y-0.5 hover:decoration-[#181411]/60 sm:text-6xl focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#181411]/40"
             style={{
               transform: hoveredCategory === provider.category ? 'scale(1.08)' : undefined,
               color: hoveredCategory === provider.category ? '#a8445f' : undefined,
