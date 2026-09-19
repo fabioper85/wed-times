@@ -1,25 +1,23 @@
 import React from 'react';
+import Countdown from './Countdown';
 
 const Info: React.FC = () => {
-  const weddingTimestamp = process.env.NEXT_PUBLIC_WEDDING_DATE_TIME_TICK 
-    ? parseInt(process.env.NEXT_PUBLIC_WEDDING_DATE_TIME_TICK) 
-    : Date.now();
+  const weddingTimestamp = process.env.NEXT_PUBLIC_WEDDING_DATE_TIME_TICK
+    ? parseInt(process.env.NEXT_PUBLIC_WEDDING_DATE_TIME_TICK, 10)
+    : new Date('2027-05-29T15:00:00+02:00').getTime();
   const weddingDate = new Date(weddingTimestamp);
-  
-  // Format date as "Month Day, Year"
-  const dateString = weddingDate.toLocaleDateString('it-IT', { 
-    year: 'numeric', 
-    month: 'long', 
-    day: 'numeric' 
+  const dateString = weddingDate.toLocaleDateString('it-IT', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    timeZone: 'Europe/Rome',
   });
-  
-  // Format time as "HH:MM"
-  const timeString = weddingDate.toLocaleTimeString('it-IT', { 
-    hour: '2-digit', 
-    minute: '2-digit' 
+  const timeString = weddingDate.toLocaleTimeString('it-IT', {
+    hour: '2-digit',
+    minute: '2-digit',
+    timeZone: 'Europe/Rome',
   });
-  
-  const location = process.env.NEXT_PUBLIC_WEDDING_LOCATION_ADDRESS || 'Location TBD';
+  const location = 'Cascina Reale Cussanio a Fossano';
 
   return (
     <div className="py-24">
@@ -37,6 +35,7 @@ const Info: React.FC = () => {
           <p className="font-lexend-deca text-lg text-[#181411]">{location}</p>
         </div>
       </div>
+      <Countdown target={weddingTimestamp} />
     </div>
   );
 };
