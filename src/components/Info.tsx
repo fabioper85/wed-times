@@ -37,15 +37,15 @@ const Info: React.FC = () => {
       <div className="mt-20 grid grid-cols-1 gap-8 px-4 text-center md:grid-cols-3">
         <div className="flex flex-col items-center gap-4">
           <h3 className="font-rockidate text-4xl text-[#181411] sm:text-5xl">Data</h3>
-          <p className="font-lexend-deca text-2xl text-[#181411]">{dateString}</p>
+          <p className="font-lexend-deca text-base leading-8 text-[#181411]/80 sm:text-lg">{dateString}</p>
         </div>
         <div className="flex flex-col items-center gap-4">
           <h3 className="font-rockidate text-4xl text-[#181411] sm:text-5xl">Orario</h3>
-          <p className="font-lexend-deca text-2xl text-[#181411]">{timeString}</p>
+          <p className="font-lexend-deca text-base leading-8 text-[#181411]/80 sm:text-lg">{timeString}</p>
         </div>
         <div className="flex flex-col items-center gap-4">
           <h3 className="font-rockidate text-4xl text-[#181411] sm:text-5xl">Location</h3>
-          <p className="font-lexend-deca text-lg text-[#181411]">{location}</p>
+          <p className="font-lexend-deca text-base leading-8 text-[#181411]/80 sm:text-lg">{location}</p>
         </div>
       </div>
 
