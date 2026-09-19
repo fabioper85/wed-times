@@ -21,7 +21,7 @@ const getTimeLeft = (target: number): TimeLeft => {
 };
 
 const Countdown = ({ target }: { target: number }) => {
-  const [hasMounted, setHasMounted] = useState(false);
+  const [isReady, setIsReady] = useState(false);
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
     days: 0,
     hours: 0,
@@ -30,7 +30,7 @@ const Countdown = ({ target }: { target: number }) => {
   });
 
   useEffect(() => {
-    setHasMounted(true);
+    setIsReady(true);
 
     const updateTimeLeft = () => setTimeLeft(getTimeLeft(target));
 
@@ -57,7 +57,7 @@ const Countdown = ({ target }: { target: number }) => {
         {units.map(({ label, value }) => (
           <div key={label} className="rounded-2xl bg-[#f8f5f2] px-3 py-5 shadow-sm ring-1 ring-[#eee6df]">
             <span className="block font-lexend-deca text-3xl font-semibold tabular-nums text-[#181411] sm:text-4xl">
-              {hasMounted ? String(value).padStart(2, '0') : '--'}
+              {isReady ? String(value).padStart(2, '0') : '00'}
             </span>
             <span className="mt-2 block font-lexend-deca text-xs uppercase tracking-[0.18em] text-[#897261]">
               {label}

@@ -3,9 +3,15 @@ import { CakeSlice, GlassWater, Gem, PartyPopper } from 'lucide-react';
 import Countdown from './Countdown';
 
 const Info: React.FC = () => {
-  const weddingTimestamp = process.env.NEXT_PUBLIC_WEDDING_DATE_TIME_TICK
-    ? parseInt(process.env.NEXT_PUBLIC_WEDDING_DATE_TIME_TICK, 10)
-    : new Date('2027-05-29T15:00:00+02:00').getTime();
+  const configuredWeddingDate = process.env.NEXT_PUBLIC_WEDDING_DATE_TIME_TICK;
+  const parsedWeddingTimestamp = configuredWeddingDate
+    ? Number.isNaN(Number(configuredWeddingDate))
+      ? Date.parse(configuredWeddingDate)
+      : Number(configuredWeddingDate)
+    : Number.NaN;
+  const weddingTimestamp = Number.isFinite(parsedWeddingTimestamp)
+    ? parsedWeddingTimestamp
+    : Date.parse('2027-05-29T15:00:00+02:00');
   const weddingDate = new Date(weddingTimestamp);
   const dateString = weddingDate.toLocaleDateString('it-IT', {
     year: 'numeric',
