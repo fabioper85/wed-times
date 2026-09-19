@@ -129,14 +129,14 @@ const Info: React.FC = () => {
                   aria-expanded={isOpen}
                   aria-controls={`roadmap-${title.replace(/[^a-z0-9]/gi, '').toLowerCase()}`}
                   onClick={() => setOpenRoadmapItem(isOpen ? null : title)}
-                  className="grid w-full grid-cols-[auto_1fr_auto] items-center gap-3 bg-white px-4 py-3 text-left transition-colors hover:bg-[var(--wedding-roadmap-icon-bg)]/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#181411]/40 sm:gap-5 sm:px-6"
+                  className="grid w-full grid-cols-[auto_1fr_auto] items-center gap-4 bg-white px-5 py-5 text-left transition-colors hover:bg-[var(--wedding-roadmap-icon-bg)]/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#181411]/40 sm:gap-6 sm:px-8 sm:py-6"
                 >
                   <div className="flex size-12 items-center justify-center rounded-full bg-[var(--wedding-roadmap-icon-bg)] text-2xl sm:size-14 sm:text-3xl" aria-hidden="true">
                     {emoji}
                   </div>
                   <div>
-                    <p className="font-lexend-deca text-sm font-semibold tracking-[0.18em] text-[#181411]/55 sm:text-base">{title}</p>
-                    <p className="mt-0.5 font-lexend-deca text-lg text-[#181411] sm:text-xl">{detail}</p>
+                    <p className="font-lexend-deca text-base font-semibold tracking-[0.18em] text-[#181411]/55 sm:text-lg">{title}</p>
+                    <p className="mt-0.5 font-lexend-deca text-base text-[#181411] sm:text-lg">{detail}</p>
                   </div>
                   <div className="flex items-center gap-3">
                     <time className="font-lexend-deca text-lg font-semibold tabular-nums text-[#181411] sm:text-xl" dateTime={`2027-05-29T${time}:00+02:00`}>{time}</time>
