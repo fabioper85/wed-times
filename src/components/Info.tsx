@@ -135,8 +135,8 @@ const Info: React.FC = () => {
                     {emoji}
                   </div>
                   <div>
-                    <p className="font-lexend-deca text-xs font-semibold tracking-[0.18em] text-[#181411]/55">{title}</p>
-                    <p className="mt-0.5 font-lexend-deca text-base text-[#181411] sm:text-lg">{detail}</p>
+                    <p className="font-lexend-deca text-sm font-semibold tracking-[0.18em] text-[#181411]/55 sm:text-base">{title}</p>
+                    <p className="mt-0.5 font-lexend-deca text-lg text-[#181411] sm:text-xl">{detail}</p>
                   </div>
                   <div className="flex items-center gap-3">
                     <time className="font-lexend-deca text-lg font-semibold tabular-nums text-[#181411] sm:text-xl" dateTime={`2027-05-29T${time}:00+02:00`}>{time}</time>
