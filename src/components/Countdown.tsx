@@ -21,17 +21,9 @@ const getTimeLeft = (target: number): TimeLeft => {
 };
 
 const Countdown = ({ target }: { target: number }) => {
-  const [hasMounted, setHasMounted] = useState(false);
-  const [timeLeft, setTimeLeft] = useState<TimeLeft>({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  });
+  const [timeLeft, setTimeLeft] = useState<TimeLeft | null>(null);
 
   useEffect(() => {
-    setHasMounted(true);
-
     const updateTimeLeft = () => setTimeLeft(getTimeLeft(target));
 
     updateTimeLeft();
@@ -41,10 +33,10 @@ const Countdown = ({ target }: { target: number }) => {
   }, [target]);
 
   const units = [
-    { label: 'Giorni', value: timeLeft.days },
-    { label: 'Ore', value: timeLeft.hours },
-    { label: 'Minuti', value: timeLeft.minutes },
-    { label: 'Secondi', value: timeLeft.seconds },
+    { label: 'Giorni', value: timeLeft?.days },
+    { label: 'Ore', value: timeLeft?.hours },
+    { label: 'Minuti', value: timeLeft?.minutes },
+    { label: 'Secondi', value: timeLeft?.seconds },
   ];
 
   return (
@@ -53,13 +45,13 @@ const Countdown = ({ target }: { target: number }) => {
         Manca sempre meno
       </p>
       <h2 className="mt-3 font-rockidate text-5xl text-[#181411] sm:text-6xl">Ci vediamo tra</h2>
-      <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-5" aria-live="polite">
+      <div className="mx-auto mt-8 grid max-w-3xl grid-cols-2 gap-x-6 gap-y-7 sm:grid-cols-4 sm:gap-x-8" aria-live="polite">
         {units.map(({ label, value }) => (
-          <div key={label} className="rounded-2xl bg-[#f8f5f2] px-3 py-5 shadow-sm ring-1 ring-[#eee6df]">
-            <span className="block font-lexend-deca text-3xl font-semibold tabular-nums text-[#181411] sm:text-4xl">
-              {hasMounted ? String(value).padStart(2, '0') : '--'}
+          <div key={label}>
+            <span className="block font-lexend-deca text-5xl font-semibold leading-none tabular-nums text-[#181411] sm:text-6xl">
+              {timeLeft ? String(value).padStart(2, '0') : '--'}
             </span>
-            <span className="mt-2 block font-lexend-deca text-xs uppercase tracking-[0.18em] text-[#897261]">
+            <span className="mt-3 block font-lexend-deca text-xs uppercase tracking-[0.18em] text-[#897261]">
               {label}
             </span>
           </div>
