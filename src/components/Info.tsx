@@ -1,9 +1,13 @@
-import React from 'react';
-import { CakeSlice, GlassWater, Gem, PartyPopper } from 'lucide-react';
+'use client';
+
+import React, { useState } from 'react';
+import { CakeSlice, ChevronDown, GlassWater, Gem, PartyPopper } from 'lucide-react';
 import Countdown from './Countdown';
 import Providers from './Providers';
 
 const Info: React.FC = () => {
+  const [openRoadmapItem, setOpenRoadmapItem] = useState<string | null>(null);
+
   // 15:00 in Italy on 29 May 2027 (CEST, UTC+02:00).
   // Keep this fixed to the confirmed wedding date instead of relying on a
   // potentially stale or differently formatted environment value.
@@ -109,31 +113,46 @@ const Info: React.FC = () => {
           </h2>
         </div>
 
-        <ol className="mx-auto mt-10 grid max-w-3xl gap-4" aria-label="Programma del matrimonio">
+        <ol className="mx-auto mt-10 max-w-3xl" aria-label="Programma del matrimonio">
           {[
             { title: 'WE DO!', detail: 'Cerimonia', time: '17:00', Icon: Gem },
             { title: 'WE EAT!', detail: 'Cena a buffet', time: '18:30', Icon: GlassWater },
             { title: 'WE CAKE!', detail: 'Taglio torta', time: '21:30', Icon: CakeSlice },
             { title: 'WE PARTY!', detail: 'Open bar + DJ set', time: '22:30', Icon: PartyPopper },
-          ].map(({ title, detail, time, Icon }) => (
-            <li
-              key={title}
-              className="grid grid-cols-[auto_1fr_auto] items-center gap-4 rounded-2xl border border-[#181411]/10 bg-[var(--wedding-roadmap-bg)] px-4 py-5 shadow-[0_8px_24px_rgba(24,20,17,0.06)] sm:gap-6 sm:px-7"
-            >
-              <div className="flex size-18 items-center justify-center rounded-full bg-[var(--wedding-roadmap-icon-bg)] text-[#181411]" aria-hidden="true">
-                <Icon strokeWidth={1.5} className="size-9" />
-              </div>
-              <div>
-                <p className="font-lexend-deca text-xs font-semibold tracking-[0.18em] text-[#181411]/55">
-                  {title}
-                </p>
-                <p className="mt-1 font-lexend-deca text-lg text-[#181411] sm:text-xl">{detail}</p>
-              </div>
-              <time className="font-lexend-deca text-2xl font-semibold tabular-nums text-[#181411] sm:text-3xl" dateTime={`2027-05-29T${time}:00+02:00`}>
-                {time}
-              </time>
-            </li>
-          ))}
+          ].map(({ title, detail, time, Icon }) => {
+            const isOpen = openRoadmapItem === title;
+
+            return (
+              <li key={title} className="border-b border-[#181411]/10 first:rounded-t-2xl last:rounded-b-2xl first:border-t">
+                <button
+                  type="button"
+                  aria-expanded={isOpen}
+                  aria-controls={`roadmap-${title.replace(/[^a-z0-9]/gi, '').toLowerCase()}`}
+                  onClick={() => setOpenRoadmapItem(isOpen ? null : title)}
+                  className="grid w-full grid-cols-[auto_1fr_auto] items-center gap-3 bg-[var(--wedding-roadmap-bg)] px-4 py-3 text-left transition-colors hover:bg-[var(--wedding-roadmap-icon-bg)]/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#181411]/40 sm:gap-5 sm:px-6"
+                >
+                  <div className="flex size-12 items-center justify-center rounded-full bg-[var(--wedding-roadmap-icon-bg)] text-[#181411] sm:size-14" aria-hidden="true">
+                    <Icon strokeWidth={1.5} className="size-7 sm:size-8" />
+                  </div>
+                  <div>
+                    <p className="font-lexend-deca text-xs font-semibold tracking-[0.18em] text-[#181411]/55">{title}</p>
+                    <p className="mt-0.5 font-lexend-deca text-base text-[#181411] sm:text-lg">{detail}</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <time className="font-lexend-deca text-lg font-semibold tabular-nums text-[#181411] sm:text-xl" dateTime={`2027-05-29T${time}:00+02:00`}>{time}</time>
+                    <ChevronDown className={`size-5 text-[#181411] transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
+                  </div>
+                </button>
+                <div
+                  id={`roadmap-${title.replace(/[^a-z0-9]/gi, '').toLowerCase()}`}
+                  hidden={!isOpen}
+                  className="bg-[var(--wedding-roadmap-bg)] px-4 pb-4 pl-[4.75rem] font-lexend-deca text-sm leading-6 text-[#181411]/70 sm:pl-[5.75rem]"
+                >
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </div>
+              </li>
+            );
+          })}
         </ol>
       </section>
 
