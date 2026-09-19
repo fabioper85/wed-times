@@ -44,7 +44,7 @@ export default function Providers() {
         </p>
       </div>
 
-      <div className="mx-auto mt-10 flex max-w-3xl flex-wrap items-center justify-center gap-x-2 gap-y-2 sm:gap-x-3 sm:gap-y-3">
+      <div className="mx-auto mt-10 flex max-w-4xl flex-wrap items-center justify-center gap-x-3 gap-y-2 sm:gap-x-4 sm:gap-y-3">
         {providers.map((provider) => (
           <button
             key={provider.category}
@@ -54,7 +54,7 @@ export default function Providers() {
             onMouseLeave={() => setHoveredCategory(null)}
             onFocus={() => setHoveredCategory(provider.category)}
             onBlur={() => setHoveredCategory(null)}
-            className="font-lexend-deca text-5xl text-[#181411] underline decoration-[#181411]/20 underline-offset-4 transition-[transform,color,text-shadow] duration-300 ease-out hover:-translate-y-0.5 hover:decoration-[#181411]/60 sm:text-6xl focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#181411]/40"
+            className="font-lexend-deca text-sm uppercase tracking-[0.08em] text-[#181411] underline decoration-[#181411]/20 underline-offset-4 transition-[transform,color,text-shadow] duration-300 ease-out hover:-translate-y-0.5 hover:decoration-[#181411]/60 sm:text-base focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#181411]/40"
             style={{
               transform: hoveredCategory === provider.category ? 'scale(1.08)' : undefined,
               color: hoveredCategory === provider.category ? '#a8445f' : undefined,
