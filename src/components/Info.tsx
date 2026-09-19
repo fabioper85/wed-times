@@ -65,7 +65,7 @@ const Info: React.FC = () => {
           </p>
           <p className="mt-8">
             Dopo il “sì” ci piaceva l’idea di una serata dinamica, per cui sarà previsto un buffet “open sitting” (potrai
-            quindi sederti dove vorrai) con diverse isole tematiche e portate di cibo a scaglioni. I più piccini, invece,
+            quindi sederti dove vorrai 😉) con diverse isole tematiche e portate di cibo a scaglioni. I più piccini, invece,
             avranno un pic-nic tutto per loro e intrattenimento dedicato.
           </p>
           <p className="mt-8">
@@ -73,12 +73,12 @@ const Info: React.FC = () => {
             complesso un grande giardino dove chiacchierare, ridere e ballare insieme a noi.
           </p>
           <p className="mt-8">
-            Non è richiesto uno specifico dress-code, desideriamo che i nostri ospiti si sentano a loro agio nei vestiti che
-            preferiscono. Ciò che ci sentiamo di consigliare è un bel paio di scarpe comode di scorta!
+            <strong>Non è richiesto uno specifico dress-code</strong>, desideriamo che i nostri ospiti si sentano a loro agio nei vestiti che
+            preferiscono. Ciò che ci sentiamo di consigliare è un bel paio di scarpe comode di scorta! 🤘 💪
           </p>
           <p className="mt-8">
-            Ultimo ma non meno importante: abbiamo cercato di rendere questa giornata il più etica possibile,
-            scegliendo dove si poteva materiali riciclabili e biodegradabili.
+            Last, but not least: abbiamo cercato di rendere questa giornata il più etica possibile,
+            scegliendo dove si poteva materiali riciclabili e biodegradabili. 🍀
           </p>
         </div>
       </section>
