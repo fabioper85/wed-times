@@ -182,6 +182,41 @@ const Info: React.FC = () => {
       </section>
 
       <Providers />
+
+      <section
+        className="mx-4 mt-24 overflow-hidden rounded-[2rem] border-4 border-[#181411] bg-[#1b1745] px-6 py-10 text-center shadow-[8px_8px_0_#f9d86f] sm:mx-auto sm:max-w-3xl sm:px-12"
+        aria-labelledby="quizposi-title"
+      >
+        <div className="mx-auto max-w-xl">
+          <p className="font-lexend-deca text-xs font-bold uppercase tracking-[0.35em] text-[#f9d86f]">
+            Insert coin to play
+          </p>
+          <h2 id="quizposi-title" className="mt-3 font-rockidate text-6xl uppercase leading-none text-white sm:text-8xl">
+            QuizPosi
+          </h2>
+          <p className="mt-6 font-lexend-deca text-base leading-8 text-white/90 sm:text-lg">
+            Pensi di sapere tutto sui Perrace / Pacetta? Dimostralo con il nostro quiz!
+          </p>
+
+          <div className="mx-auto mt-8 flex w-fit flex-col items-center gap-3 rounded-2xl border-4 border-[#f9d86f] bg-white p-4 shadow-[5px_5px_0_#f27d9d]">
+            <div
+              className="grid size-36 grid-cols-7 gap-1 bg-white p-2 sm:size-44"
+              role="img"
+              aria-label="Placeholder per il QR code del quiz"
+            >
+              {Array.from({ length: 49 }, (_, index) => (
+                <span
+                  key={index}
+                  className={index % 3 === 0 || [0, 1, 7, 8, 6, 13, 42, 43, 48].includes(index) ? 'bg-[#1b1745]' : 'bg-transparent'}
+                />
+              ))}
+            </div>
+            <span className="font-lexend-deca text-xs font-bold uppercase tracking-[0.16em] text-[#1b1745]">
+              QR code in arrivo
+            </span>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
