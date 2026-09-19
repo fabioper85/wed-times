@@ -57,7 +57,7 @@ export default function Providers() {
             className="font-lexend-deca text-sm uppercase tracking-[0.08em] text-[#181411] underline decoration-[#181411]/20 underline-offset-4 transition-[transform,color,text-shadow] duration-300 ease-out hover:-translate-y-0.5 hover:decoration-[#181411]/60 sm:text-base focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#181411]/40"
             style={{
               transform: hoveredCategory === provider.category ? 'scale(1.08)' : undefined,
-              color: hoveredCategory === provider.category ? '#b08a00' : undefined,
+              color: hoveredCategory === provider.category ? 'var(--wedding-accent)' : undefined,
               textShadow: hoveredCategory === provider.category ? '0 6px 18px rgba(168, 68, 95, 0.2)' : undefined,
             }}
           >
