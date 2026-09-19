@@ -118,7 +118,7 @@ const Info: React.FC = () => {
           ].map(({ title, detail, time, Icon }) => (
             <li
               key={title}
-              className="grid grid-cols-[1fr_auto] items-center gap-5 rounded-2xl border border-[#181411]/10 bg-[#fffaf5] px-5 py-5 shadow-[0_8px_24px_rgba(24,20,17,0.06)] sm:grid-cols-[1fr_auto_auto] sm:px-7"
+              className="grid grid-cols-[1fr_auto] items-center gap-5 rounded-2xl border border-[#181411]/10 bg-[#fcf7d6] px-5 py-5 shadow-[0_8px_24px_rgba(24,20,17,0.06)] sm:grid-cols-[1fr_auto_auto] sm:px-7"
             >
               <div>
                 <p className="font-lexend-deca text-xs font-semibold tracking-[0.18em] text-[#181411]/55">
