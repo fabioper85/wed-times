@@ -20,7 +20,7 @@ const Info: React.FC = () => {
     timeZone: 'Europe/Rome',
   });
   const location = 'Cascina Reale Cussanio a Fossano';
-  const locationAddress = process.env.NEXT_PUBLIC_WEDDING_LOCATION_ADDRESS ?? 'Cascina Reale Cussanio, Via S. Maria, 12045 Fossano CN';
+  const locationAddress = 'Cascina Reale Cussanio, Via S. Maria, 12045 Fossano CN';
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(locationAddress)}`;
 
   return (
