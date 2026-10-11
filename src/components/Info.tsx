@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import Countdown from './Countdown';
 import Providers from './Providers';
+import BeerStories from './BeerStories';
 
 const Info: React.FC = () => {
   const [openRoadmapItem, setOpenRoadmapItem] = useState<string | null>(null);
@@ -180,6 +181,8 @@ const Info: React.FC = () => {
           </p>
         </div>
       </section>
+
+      <BeerStories />
 
       <Providers />
 
