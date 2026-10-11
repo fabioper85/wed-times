@@ -192,32 +192,20 @@ const Info: React.FC = () => {
       >
         <div className="mx-auto max-w-xl">
           <p className="text-xs uppercase tracking-[0.2em] text-[#f9d86f]" style={{ fontFamily: '"Zen Dots", sans-serif' }}>
-            Insert coin to play
+            Area in costruzione
           </p>
-          <h2 id="quizposi-title" className="mt-3 text-5xl uppercase leading-tight tracking-[-0.06em] text-white [text-shadow:4px_4px_0_#f27d9d] sm:text-6xl" style={{ fontFamily: '"Michroma", sans-serif' }}>
+          <div className="mx-auto mt-5 text-7xl leading-none" role="img" aria-label="Segnale di pericolo">
+            ⚠️
+          </div>
+          <h2 id="quizposi-title" className="mt-5 text-5xl uppercase leading-tight tracking-[-0.06em] text-white [text-shadow:4px_4px_0_#f27d9d] sm:text-6xl" style={{ fontFamily: '"Michroma", sans-serif' }}>
             QuizPosi
           </h2>
-          <p className="mt-6 text-base leading-8 text-white/90 sm:text-lg" style={{ fontFamily: '"Audiowide", sans-serif' }}>
-            Pensi di sapere tutto sui Perrace / Pacetta? Dimostralo con il nostro quiz!
+          <p className="mt-6 text-2xl uppercase leading-8 text-[#f9d86f] sm:text-3xl" style={{ fontFamily: '"Audiowide", sans-serif' }}>
+            Coming soon
           </p>
-
-          <div className="mx-auto mt-8 flex w-fit flex-col items-center gap-3 rounded-2xl border-4 border-[#f9d86f] bg-white p-4 shadow-[5px_5px_0_#f27d9d]">
-            <div
-              className="grid size-36 grid-cols-7 gap-1 bg-white p-2 sm:size-44"
-              role="img"
-              aria-label="Placeholder per il QR code del quiz"
-            >
-              {Array.from({ length: 49 }, (_, index) => (
-                <span
-                  key={index}
-                  className={index % 3 === 0 || [0, 1, 7, 8, 6, 13, 42, 43, 48].includes(index) ? 'bg-[#1b1745]' : 'bg-transparent'}
-                />
-              ))}
-            </div>
-            <span className="text-xs uppercase tracking-[0.08em] text-[#1b1745]" style={{ fontFamily: '"Zen Dots", sans-serif' }}>
-              QR code in arrivo
-            </span>
-          </div>
+          <p className="mt-4 text-base leading-8 text-white/90 sm:text-lg" style={{ fontFamily: '"Audiowide", sans-serif' }}>
+            Il quiz è ancora in fase di caricamento. Preparatevi a mettere alla prova la vostra conoscenza dei Perrace / Pacetta!
+          </p>
         </div>
       </section>
 
