@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import Countdown from './Countdown';
 import Providers from './Providers';
+import BeerStories from './BeerStories';
 
 const Info: React.FC = () => {
   const [openRoadmapItem, setOpenRoadmapItem] = useState<string | null>(null);
@@ -70,7 +71,7 @@ const Info: React.FC = () => {
         </div>
       </div>
 
-      <section className="mx-auto mt-32 max-w-3xl px-4 text-left" aria-labelledby="spoiler-title">
+      <section className="mx-auto mt-32 max-w-3xl px-4 text-center" aria-labelledby="spoiler-title">
         <h2 id="spoiler-title" className="font-rockidate text-5xl text-[#181411] sm:text-6xl">
           Qualche spoiler
         </h2>
@@ -129,7 +130,7 @@ const Info: React.FC = () => {
                   aria-expanded={isOpen}
                   aria-controls={`roadmap-${title.replace(/[^a-z0-9]/gi, '').toLowerCase()}`}
                   onClick={() => setOpenRoadmapItem(isOpen ? null : title)}
-                  className="grid w-full grid-cols-[auto_1fr_auto] items-center gap-4 bg-white px-5 py-5 text-left transition-colors hover:bg-[var(--wedding-roadmap-icon-bg)]/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#181411]/40 sm:gap-6 sm:px-8 sm:py-6"
+                  className="grid w-full grid-cols-[auto_1fr_auto] items-center gap-4 bg-white px-5 py-5 text-center transition-colors hover:bg-[var(--wedding-roadmap-icon-bg)]/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#181411]/40 sm:gap-6 sm:px-8 sm:py-6"
                 >
                   <div className="flex size-12 items-center justify-center rounded-full bg-[var(--wedding-roadmap-icon-bg)] text-2xl sm:size-14 sm:text-3xl" aria-hidden="true">
                     {emoji}
@@ -146,7 +147,7 @@ const Info: React.FC = () => {
                 <div
                   id={`roadmap-${title.replace(/[^a-z0-9]/gi, '').toLowerCase()}`}
                   hidden={!isOpen}
-                  className="bg-white px-4 pb-4 pl-[4.75rem] font-lexend-deca text-sm leading-6 text-[#181411]/70 sm:pl-[5.75rem]"
+                  className="bg-white px-4 pb-4 font-lexend-deca text-center text-sm leading-6 text-[#181411]/70"
                 >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 </div>
@@ -164,7 +165,7 @@ const Info: React.FC = () => {
         />
       </figure>
 
-      <section className="mx-auto mt-24 max-w-3xl px-4 text-right" aria-labelledby="music-title">
+      <section className="mx-auto mt-24 max-w-3xl px-4 text-center" aria-labelledby="music-title">
         <h2 id="music-title" className="font-rockidate text-5xl text-[#181411] sm:text-6xl">
           La musica
         </h2>
@@ -180,6 +181,8 @@ const Info: React.FC = () => {
           </p>
         </div>
       </section>
+
+      <BeerStories />
 
       <Providers />
 
