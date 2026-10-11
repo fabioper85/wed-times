@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Instagram } from 'lucide-react';
 import Countdown from './Countdown';
 import Providers from './Providers';
 import BeerStories from './BeerStories';
@@ -218,6 +218,37 @@ const Info: React.FC = () => {
               QR code in arrivo
             </span>
           </div>
+        </div>
+      </section>
+
+      <section className="mx-auto mt-24 max-w-3xl px-4 text-center" aria-labelledby="extra-title">
+        <h2 id="extra-title" className="font-rockidate text-5xl text-[#181411] sm:text-6xl">
+          Extra
+        </h2>
+        <div className="mx-auto mt-8 max-w-2xl space-y-8 font-lexend-deca text-base leading-8 text-[#181411] sm:text-lg">
+          <p>
+            Come dici? Ti sei perso il video “Save the Date”? Lo trovi qui di seguito{' '}
+            <a
+              href="https://www.instagram.com/reel/Dd4xtHzt-lJOkB5kSD_J9qsv6ut5GebxMo7neY0/?dlrf=MTQ3Mnd3anMycTltYQ=="
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 font-semibold underline decoration-[#181411]/30 underline-offset-4 transition-colors hover:text-[#b08a00]"
+            >
+              <Instagram className="size-5" strokeWidth={1.75} aria-hidden="true" />
+              <span className="sr-only">Guarda il video Save the Date su Instagram</span>
+              <span aria-hidden="true">Instagram</span>
+            </a>
+          </p>
+          <p>
+            Hai qualche foto del nostro matrimonio? Se hai piacere condividile con noi{' '}
+            <a
+              href="#"
+              aria-label="Link per condividere le foto, da definire"
+              className="font-semibold underline decoration-[#181411]/30 underline-offset-4 transition-colors hover:text-[#b08a00]"
+            >
+              qui
+            </a>
+          </p>
         </div>
       </section>
     </div>
