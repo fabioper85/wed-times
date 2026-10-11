@@ -68,7 +68,7 @@ export default function BeerStories() {
           );
         })}
       </div>
-      <div className="mt-10 overflow-hidden rounded-2xl border border-[#181411]/10 bg-white shadow-[0_8px_24px_rgba(24,20,17,0.06)]">
+      <div className="mt-10 overflow-hidden rounded-2xl bg-white">
         <Image
           src="/images/bikers.jpg"
           alt="Illustrazione di due motociclisti in viaggio"
