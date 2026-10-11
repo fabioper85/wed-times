@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 
@@ -66,6 +67,15 @@ export default function BeerStories() {
             </article>
           );
         })}
+      </div>
+      <div className="mt-10 overflow-hidden rounded-2xl bg-white">
+        <Image
+          src="/images/bikers.jpg"
+          alt="Illustrazione di due motociclisti in viaggio"
+          width={1600}
+          height={1125}
+          className="h-auto w-full"
+        />
       </div>
     </section>
   );
