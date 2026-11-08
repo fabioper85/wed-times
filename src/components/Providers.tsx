@@ -1,12 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import { Instagram, X } from 'lucide-react';
+import { Globe, Instagram, X } from 'lucide-react';
 
 type ProviderLink = {
   tipoLink: string;
   link: string;
   icon: typeof Instagram;
+  disabled: boolean;
 };
 
 type Provider = {
@@ -24,10 +25,22 @@ const providers: Provider[] = [
         tipoLink: 'instagram',
         link: 'https://instagram.com/alma.events.management',
         icon: Instagram,
+        disabled: true,
       },
     ],
   },
-  { category: 'Location', name: 'Cascina Reale Cussanio' },
+  {
+    category: 'Location',
+    name: 'Cascina Reale Cussanio',
+    links: [
+      {
+        tipoLink: 'website',
+        link: 'https://cascina-reale.it',
+        icon: Globe,
+        disabled: true,
+      },
+    ],
+  },
   { category: 'Cibo', name: 'Giordano Catering' },
   { category: 'Torta Nuziale', name: 'Pasticceria Balla' },
   { category: 'Musica', name: 'Fratelli Pleasure Orchestra' },
