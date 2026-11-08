@@ -121,52 +121,56 @@ export default function Providers() {
 
       {selected ? (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-[#181411]/45 px-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-[#181411]/55 px-4 backdrop-blur-sm"
           role="presentation"
           onClick={() => setSelected(null)}
         >
           <div
             role="dialog"
             aria-modal="true"
-            aria-labelledby="provider-dialog-title"
-            className="relative w-full max-w-md rounded-3xl bg-white p-7 text-center shadow-2xl sm:p-9"
+            aria-labelledby="provider-dialog-category"
+            className="relative w-full max-w-md overflow-hidden rounded-[2rem] border border-[#181411]/10 bg-white shadow-[0_24px_80px_rgba(24,20,17,0.2)]"
             onClick={(event) => event.stopPropagation()}
           >
-            <button
-              type="button"
-              aria-label="Chiudi dettagli fornitore"
-              onClick={() => setSelected(null)}
-              className="absolute right-4 top-4 rounded-full p-2 text-[#181411]/60 transition-colors hover:bg-[#f1e7a9] hover:text-[#181411] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#181411]/40"
-            >
-              <X aria-hidden="true" />
-            </button>
-            <p className="font-lexend-deca text-xs font-semibold uppercase tracking-[0.18em] text-[#181411]/55">
-              {selected.category}
-            </p>
-            <h3 id="provider-dialog-title" className="mt-4 font-lexend-deca text-2xl font-semibold text-[#181411]">
-              {selected.name}
-            </h3>
-            {selected.links?.length ? (
-              <div className="mt-6 flex flex-wrap justify-center gap-3">
-                {selected.links.map(({ tipoLink, link, icon: Icon }) => (
-                  <a
-                    key={`${selected.category}-${tipoLink}`}
-                    href={link}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={`${tipoLink} di ${selected.name}`}
-                    className="inline-flex items-center justify-center rounded-full p-2 text-[#181411] transition-colors hover:bg-[var(--wedding-roadmap-icon-bg)]/40 hover:text-[var(--wedding-accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--wedding-accent)]"
-                  >
-                    <Icon aria-hidden="true" className="size-6" />
-                    <span className="sr-only">{tipoLink}</span>
-                  </a>
-                ))}
-              </div>
-            ) : (
-              <p className="mt-6 font-lexend-deca text-sm text-[#181411]/65">
-                Link in arrivo
+            <div className="h-2 bg-[var(--wedding-roadmap-icon-bg)]" />
+            <div className="p-6 text-center sm:p-8">
+              <button
+                type="button"
+                aria-label="Chiudi dettagli fornitore"
+                onClick={() => setSelected(null)}
+                className="absolute right-5 top-5 rounded-full border border-[#181411]/10 bg-white p-2 text-[#181411]/55 transition-colors hover:bg-[var(--wedding-roadmap-icon-bg)] hover:text-[#181411] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#181411]/40"
+              >
+                <X aria-hidden="true" className="size-4" />
+              </button>
+              <h3 id="provider-dialog-category" className="font-lexend-deca text-sm font-semibold uppercase tracking-[0.22em] text-[#181411]/55">
+                {selected.category}
+              </h3>
+              <p className="mt-2 font-lexend-deca text-3xl font-semibold leading-tight text-[#181411] sm:text-4xl">
+                {selected.name}
               </p>
-            )}
+              <div className="mx-auto mt-4 h-px w-12 bg-[var(--wedding-accent)]/40" />
+              {selected.links?.length ? (
+                <div className="mt-4 flex flex-wrap justify-center gap-2">
+                  {selected.links.map(({ tipoLink, link, icon: Icon }) => (
+                    <a
+                      key={`${selected.category}-${tipoLink}`}
+                      href={link}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`${tipoLink} di ${selected.name}`}
+                      className="inline-flex size-12 items-center justify-center rounded-2xl border border-[#181411]/10 bg-[#fffdf4] text-[#181411] shadow-[0_4px_12px_rgba(24,20,17,0.06)] transition-all hover:-translate-y-0.5 hover:border-[var(--wedding-accent)]/40 hover:bg-[var(--wedding-roadmap-icon-bg)]/45 hover:text-[var(--wedding-accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--wedding-accent)]"
+                    >
+                      <Icon aria-hidden="true" className="size-5" />
+                      <span className="sr-only">{tipoLink}</span>
+                    </a>
+                  ))}
+                </div>
+              ) : (
+                <p className="mt-4 font-lexend-deca text-sm text-[#181411]/65">
+                  Link in arrivo
+                </p>
+              )}
+            </div>
           </div>
         </div>
       ) : null}
