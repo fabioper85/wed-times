@@ -1,32 +1,85 @@
 'use client';
 
 import { useState } from 'react';
-import { Instagram, X } from 'lucide-react';
+import { Globe, Instagram, X } from 'lucide-react';
+
+type ProviderLink = {
+  tipoLink: string;
+  link: string;
+  icon: typeof Instagram;
+  disabled: boolean;
+};
 
 type Provider = {
   category: string;
   name: string;
-  href?: string;
+  links?: ProviderLink[];
 };
 
 const providers: Provider[] = [
-  { category: 'Wedding Planner', name: 'Alma Teodora Event Manager' },
-  { category: 'Location', name: 'Cascina Reale Cussanio' },
+  {
+    category: 'Wedding Planner',
+    name: 'Alma Teodora Event Manager',
+    links: [
+      {
+        tipoLink: 'instagram',
+        link: 'https://instagram.com/alma.events.management',
+        icon: Instagram,
+        disabled: true,
+      },
+    ],
+  },
+  {
+    category: 'Location',
+    name: 'Cascina Reale Cussanio',
+    links: [
+      {
+        tipoLink: 'website',
+        link: 'https://cascina-reale.it',
+        icon: Globe,
+        disabled: true,
+      },
+    ],
+  },
   { category: 'Cibo', name: 'Giordano Catering' },
   { category: 'Torta Nuziale', name: 'Pasticceria Balla' },
-  { category: 'Musica', name: 'Fratelli Pleasure Orchestra' },
+  {
+    category: 'Musica',
+    name: 'Fratelli Pleasure Orchestra',
+    links: [{ tipoLink: 'instagram', link: 'https://instagram.com/fratellipleasureorchestra', icon: Instagram, disabled: true }],
+  },
   { category: 'Beverage', name: 'Marco Fara e ?' },
   { category: 'Fotografia', name: 'AD HOC FOTO (Mauro Franco)' },
   { category: 'Videomaking', name: 'Simone Rubinato' },
-  { category: 'Fedi', name: 'Annag Collection' },
-  { category: 'Partecipazioni', name: 'Sposinstyle' },
+  {
+    category: 'Fedi',
+    name: 'Annag Collection',
+    links: [{ tipoLink: 'instagram', link: 'https://instagram.com/annag_collection', icon: Instagram, disabled: true }],
+  },
+  {
+    category: 'Partecipazioni',
+    name: 'Sposinstyle',
+    links: [{ tipoLink: 'website', link: 'https://sposinstyle.com', icon: Globe, disabled: true }],
+  },
   { category: 'Make Up & Hair', name: '...' },
   { category: 'Decorazioni e Bouquet', name: '...' },
   { category: 'Confettata', name: "M&M'S" },
   { category: 'Abiti', name: 'Atelier Alpier' },
-  { category: 'Accessori', name: 'Mediterranea Jewels' },
-  { category: 'Caricature digitali', name: 'Felinia e Ribosio' },
-  { category: 'Viaggio di nozze', name: 'WeRoad' },
+  {
+    category: 'Accessori',
+    name: 'Mediterranea Jewels',
+    links: [{ tipoLink: 'website', link: 'https://mediterraneajewels.com', icon: Globe, disabled: true }],
+  },
+  {
+    category: 'Caricature digitali',
+    name: 'Felinia e Ribosio',
+    links: [{ tipoLink: 'website', link: 'https://felinia.it', icon: Globe, disabled: true }],
+  },
+  {
+    category: 'Viaggio di nozze',
+    name: 'WeRoad',
+    links: [{ tipoLink: 'website', link: 'https://weroad.com', icon: Globe, disabled: true }],
+  },
 ];
 
 export default function Providers() {
@@ -93,15 +146,22 @@ export default function Providers() {
             <h3 id="provider-dialog-title" className="mt-4 font-lexend-deca text-2xl font-semibold text-[#181411]">
               {selected.name}
             </h3>
-            {selected.href ? (
-              <a
-                href={selected.href}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-6 inline-flex items-center gap-2 font-lexend-deca text-sm text-[#181411] underline underline-offset-4"
-              >
-                <Instagram aria-hidden="true" /> Instagram
-              </a>
+            {selected.links?.length ? (
+              <div className="mt-6 flex flex-wrap justify-center gap-3">
+                {selected.links.map(({ tipoLink, link, icon: Icon }) => (
+                  <a
+                    key={`${selected.category}-${tipoLink}`}
+                    href={link}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`${tipoLink} di ${selected.name}`}
+                    className="inline-flex items-center justify-center rounded-full p-2 text-[#181411] transition-colors hover:bg-[var(--wedding-roadmap-icon-bg)]/40 hover:text-[var(--wedding-accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--wedding-accent)]"
+                  >
+                    <Icon aria-hidden="true" className="size-6" />
+                    <span className="sr-only">{tipoLink}</span>
+                  </a>
+                ))}
+              </div>
             ) : (
               <p className="mt-6 font-lexend-deca text-sm text-[#181411]/65">
                 Link in arrivo
