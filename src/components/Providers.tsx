@@ -118,10 +118,10 @@ export default function Providers() {
                     target="_blank"
                     rel="noreferrer"
                     aria-label={`${tipoLink} di ${selected.name}`}
-                    className="inline-flex items-center gap-2 font-lexend-deca text-sm text-[#181411] underline underline-offset-4 transition-colors hover:text-[var(--wedding-accent)]"
+                    className="inline-flex items-center justify-center rounded-full p-2 text-[#181411] transition-colors hover:bg-[var(--wedding-roadmap-icon-bg)]/40 hover:text-[var(--wedding-accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--wedding-accent)]"
                   >
-                    <Icon aria-hidden="true" className="size-5" />
-                    {tipoLink}
+                    <Icon aria-hidden="true" className="size-6" />
+                    <span className="sr-only">{tipoLink}</span>
                   </a>
                 ))}
               </div>
