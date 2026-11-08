@@ -230,8 +230,10 @@ const Info: React.FC = () => {
           <p>
             Hai qualche foto del nostro matrimonio? Se hai piacere condividile con noi{' '}
             <a
-              href="#"
-              aria-label="Link per condividere le foto, da definire"
+              href="https://photos.app.goo.gl/KCquMSqc5SoVVF3z8"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Condividi le foto del matrimonio"
               className="font-semibold underline decoration-[#181411]/30 underline-offset-4 transition-colors hover:text-[#b08a00]"
             >
               qui
