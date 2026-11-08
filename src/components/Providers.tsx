@@ -43,19 +43,43 @@ const providers: Provider[] = [
   },
   { category: 'Cibo', name: 'Giordano Catering' },
   { category: 'Torta Nuziale', name: 'Pasticceria Balla' },
-  { category: 'Musica', name: 'Fratelli Pleasure Orchestra' },
+  {
+    category: 'Musica',
+    name: 'Fratelli Pleasure Orchestra',
+    links: [{ tipoLink: 'instagram', link: 'https://instagram.com/fratellipleasureorchestra', icon: Instagram, disabled: true }],
+  },
   { category: 'Beverage', name: 'Marco Fara e ?' },
   { category: 'Fotografia', name: 'AD HOC FOTO (Mauro Franco)' },
   { category: 'Videomaking', name: 'Simone Rubinato' },
-  { category: 'Fedi', name: 'Annag Collection' },
-  { category: 'Partecipazioni', name: 'Sposinstyle' },
+  {
+    category: 'Fedi',
+    name: 'Annag Collection',
+    links: [{ tipoLink: 'instagram', link: 'https://instagram.com/annag_collection', icon: Instagram, disabled: true }],
+  },
+  {
+    category: 'Partecipazioni',
+    name: 'Sposinstyle',
+    links: [{ tipoLink: 'website', link: 'https://sposinstyle.com', icon: Globe, disabled: true }],
+  },
   { category: 'Make Up & Hair', name: '...' },
   { category: 'Decorazioni e Bouquet', name: '...' },
   { category: 'Confettata', name: "M&M'S" },
   { category: 'Abiti', name: 'Atelier Alpier' },
-  { category: 'Accessori', name: 'Mediterranea Jewels' },
-  { category: 'Caricature digitali', name: 'Felinia e Ribosio' },
-  { category: 'Viaggio di nozze', name: 'WeRoad' },
+  {
+    category: 'Accessori',
+    name: 'Mediterranea Jewels',
+    links: [{ tipoLink: 'website', link: 'https://mediterraneajewels.com', icon: Globe, disabled: true }],
+  },
+  {
+    category: 'Caricature digitali',
+    name: 'Felinia e Ribosio',
+    links: [{ tipoLink: 'website', link: 'https://felinia.it', icon: Globe, disabled: true }],
+  },
+  {
+    category: 'Viaggio di nozze',
+    name: 'WeRoad',
+    links: [{ tipoLink: 'website', link: 'https://weroad.com', icon: Globe, disabled: true }],
+  },
 ];
 
 export default function Providers() {
