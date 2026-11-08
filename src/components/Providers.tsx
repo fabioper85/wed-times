@@ -3,14 +3,30 @@
 import { useState } from 'react';
 import { Instagram, X } from 'lucide-react';
 
+type ProviderLink = {
+  tipoLink: string;
+  link: string;
+  icon: typeof Instagram;
+};
+
 type Provider = {
   category: string;
   name: string;
-  href?: string;
+  links?: ProviderLink[];
 };
 
 const providers: Provider[] = [
-  { category: 'Wedding Planner', name: 'Alma Teodora Event Manager' },
+  {
+    category: 'Wedding Planner',
+    name: 'Alma Teodora Event Manager',
+    links: [
+      {
+        tipoLink: 'instagram',
+        link: 'https://instagram.com/alma.events.management',
+        icon: Instagram,
+      },
+    ],
+  },
   { category: 'Location', name: 'Cascina Reale Cussanio' },
   { category: 'Cibo', name: 'Giordano Catering' },
   { category: 'Torta Nuziale', name: 'Pasticceria Balla' },
@@ -93,15 +109,22 @@ export default function Providers() {
             <h3 id="provider-dialog-title" className="mt-4 font-lexend-deca text-2xl font-semibold text-[#181411]">
               {selected.name}
             </h3>
-            {selected.href ? (
-              <a
-                href={selected.href}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-6 inline-flex items-center gap-2 font-lexend-deca text-sm text-[#181411] underline underline-offset-4"
-              >
-                <Instagram aria-hidden="true" /> Instagram
-              </a>
+            {selected.links?.length ? (
+              <div className="mt-6 flex flex-wrap justify-center gap-3">
+                {selected.links.map(({ tipoLink, link, icon: Icon }) => (
+                  <a
+                    key={`${selected.category}-${tipoLink}`}
+                    href={link}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`${tipoLink} di ${selected.name}`}
+                    className="inline-flex items-center gap-2 font-lexend-deca text-sm text-[#181411] underline underline-offset-4 transition-colors hover:text-[var(--wedding-accent)]"
+                  >
+                    <Icon aria-hidden="true" className="size-5" />
+                    {tipoLink}
+                  </a>
+                ))}
+              </div>
             ) : (
               <p className="mt-6 font-lexend-deca text-sm text-[#181411]/65">
                 Link in arrivo
