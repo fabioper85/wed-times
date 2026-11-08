@@ -128,12 +128,12 @@ export default function Providers() {
           <div
             role="dialog"
             aria-modal="true"
-            aria-labelledby="provider-dialog-title"
+            aria-labelledby="provider-dialog-category"
             className="relative w-full max-w-md overflow-hidden rounded-[2rem] border border-[#181411]/10 bg-white shadow-[0_24px_80px_rgba(24,20,17,0.2)]"
             onClick={(event) => event.stopPropagation()}
           >
             <div className="h-2 bg-[var(--wedding-roadmap-icon-bg)]" />
-            <div className="p-7 text-center sm:p-9">
+            <div className="p-6 text-center sm:p-8">
               <button
                 type="button"
                 aria-label="Chiudi dettagli fornitore"
@@ -142,18 +142,15 @@ export default function Providers() {
               >
                 <X aria-hidden="true" className="size-4" />
               </button>
-              <div className="mx-auto flex size-14 items-center justify-center rounded-full bg-[var(--wedding-roadmap-icon-bg)]/45 text-[var(--wedding-accent)]">
-                <span className="font-rockidate text-2xl" aria-hidden="true">&amp;</span>
-              </div>
-              <p className="mt-5 font-lexend-deca text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-[#181411]/50">
+              <h3 id="provider-dialog-category" className="font-lexend-deca text-sm font-semibold uppercase tracking-[0.22em] text-[#181411]/55">
                 {selected.category}
-              </p>
-              <h3 id="provider-dialog-title" className="mt-3 font-lexend-deca text-2xl font-semibold leading-tight text-[#181411] sm:text-3xl">
-                {selected.name}
               </h3>
-              <div className="mx-auto mt-5 h-px w-12 bg-[var(--wedding-accent)]/40" />
+              <p className="mt-2 font-lexend-deca text-3xl font-semibold leading-tight text-[#181411] sm:text-4xl">
+                {selected.name}
+              </p>
+              <div className="mx-auto mt-4 h-px w-12 bg-[var(--wedding-accent)]/40" />
               {selected.links?.length ? (
-                <div className="mt-6 flex flex-wrap justify-center gap-3">
+                <div className="mt-4 flex flex-wrap justify-center gap-2">
                   {selected.links.map(({ tipoLink, link, icon: Icon }) => (
                     <a
                       key={`${selected.category}-${tipoLink}`}
@@ -169,7 +166,7 @@ export default function Providers() {
                   ))}
                 </div>
               ) : (
-                <p className="mt-6 font-lexend-deca text-sm text-[#181411]/65">
+                <p className="mt-4 font-lexend-deca text-sm text-[#181411]/65">
                   Link in arrivo
                 </p>
               )}
