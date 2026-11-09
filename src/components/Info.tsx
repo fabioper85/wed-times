@@ -1,30 +1,18 @@
 'use client';
 
-import React, { useState } from 'react';
-import { ChevronDown, Instagram } from 'lucide-react';
+import React from 'react';
+import { Instagram } from 'lucide-react';
 import Countdown from './Countdown';
 import Providers from './Providers';
 import BeerStories from './BeerStories';
 
 const Info: React.FC = () => {
-  const [openRoadmapItem, setOpenRoadmapItem] = useState<string | null>(null);
-
-  // 15:00 in Italy on 29 May 2027 (CEST, UTC+02:00).
+  // 16:00 in Italy on 29 May 2027 (CEST, UTC+02:00).
   // Keep this fixed to the confirmed wedding date instead of relying on a
   // potentially stale or differently formatted environment value.
-  const weddingTimestamp = Date.UTC(2027, 4, 29, 13, 0, 0);
-  const weddingDate = new Date(weddingTimestamp);
-  const dateString = weddingDate.toLocaleDateString('it-IT', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    timeZone: 'Europe/Rome',
-  });
-  const timeString = weddingDate.toLocaleTimeString('it-IT', {
-    hour: '2-digit',
-    minute: '2-digit',
-    timeZone: 'Europe/Rome',
-  });
+  const weddingTimestamp = Date.UTC(2027, 4, 29, 14, 0, 0);
+  const dateString = '29 maggio 2027';
+  const timeString = '16:00';
   const location = 'Cascina Reale Cussanio a Fossano';
   const locationAddress = 'Cascina Reale Cussanio, Via S. Maria, 12045 Fossano CN';
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(locationAddress)}`;
@@ -120,44 +108,22 @@ const Info: React.FC = () => {
             { title: 'WE EAT!', detail: 'Cena a buffet', time: '18:30', emoji: '🍽️' },
             { title: 'WE CAKE!', detail: 'Taglio torta', time: '21:30', emoji: '🍰' },
             { title: 'WE PARTY!', detail: 'Open bar + DJ set', time: '22:30', emoji: '🎉' },
-          ].map(({ title, detail, time, emoji }) => {
-            const isOpen = openRoadmapItem === title;
-
-            return (
-              <li key={title} className="border-b border-[#181411]/10 last:border-b-0">
-                <button
-                  type="button"
-                  aria-expanded={isOpen}
-                  aria-controls={`roadmap-${title.replace(/[^a-z0-9]/gi, '').toLowerCase()}`}
-                  onClick={() => setOpenRoadmapItem(isOpen ? null : title)}
-                  className="grid w-full grid-cols-[auto_1fr_auto] items-center gap-4 bg-white px-5 py-5 text-center transition-colors hover:bg-[var(--wedding-roadmap-icon-bg)]/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#181411]/40 sm:gap-6 sm:px-8 sm:py-6"
-                >
-                  <div className="flex size-12 items-center justify-center rounded-full bg-[var(--wedding-roadmap-icon-bg)] text-2xl sm:size-14 sm:text-3xl" aria-hidden="true">
-                    {emoji}
-                  </div>
-                  <div>
-                    <p className="font-lexend-deca text-base font-semibold tracking-[0.18em] text-[#181411]/55 sm:text-lg">{title}</p>
-                    <p className="mt-0.5 font-lexend-deca text-base text-[#181411] sm:text-lg">{detail}</p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <time className="font-lexend-deca text-lg font-semibold tabular-nums text-[#181411] sm:text-xl" dateTime={`2027-05-29T${time}:00+02:00`}>{time}</time>
-                    <ChevronDown className={`size-5 text-[#181411] transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
-                  </div>
-                </button>
-                <div
-                  id={`roadmap-${title.replace(/[^a-z0-9]/gi, '').toLowerCase()}`}
-                  hidden={!isOpen}
-                  className="bg-white px-4 pb-4 font-lexend-deca text-center text-sm leading-6 text-[#181411]/70"
-                >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </div>
-              </li>
-            );
-          })}
+          ].map(({ title, detail, time, emoji }) => (
+            <li key={title} className="grid grid-cols-[auto_1fr_auto] items-center gap-4 border-b border-[#181411]/10 bg-white px-5 py-5 text-center last:border-b-0 sm:gap-6 sm:px-8 sm:py-6">
+              <div className="flex size-12 items-center justify-center rounded-full bg-[var(--wedding-roadmap-icon-bg)] text-2xl sm:size-14 sm:text-3xl" aria-hidden="true">
+                {emoji}
+              </div>
+              <div>
+                <p className="font-lexend-deca text-base font-semibold tracking-[0.18em] text-[#181411]/55 sm:text-lg">{title}</p>
+                <p className="mt-0.5 font-lexend-deca text-base text-[#181411] sm:text-lg">{detail}</p>
+              </div>
+              <time className="font-lexend-deca text-lg font-semibold tabular-nums text-[#181411] sm:text-xl" dateTime={`2027-05-29T${time}:00+02:00`}>{time}</time>
+            </li>
+          ))}
         </ol>
       </section>
 
-      <figure className="mx-auto mt-24 max-w-4xl px-4" aria-label="Illustrazione degli sposi che festeggiano">
+      <figure className="mx-auto mt-12 max-w-4xl px-4" aria-label="Illustrazione degli sposi che festeggiano">
         <img
           src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/rock_wedding-2nCjQY9B7VKwEOdjRt0oab8iq7wGXe.jpg"
           alt="Illustrazione degli sposi mentre festeggiano insieme"
@@ -165,9 +131,9 @@ const Info: React.FC = () => {
         />
       </figure>
 
-      <section className="mx-auto mt-24 max-w-3xl px-4 text-center" aria-labelledby="music-title">
+      <section className="mx-auto mt-12 max-w-3xl px-4 text-center" aria-labelledby="music-title">
         <h2 id="music-title" className="font-rockidate text-5xl text-[#181411] sm:text-6xl">
-          La musica
+          La Musica
         </h2>
         <div className="mt-6 flex flex-col gap-5 font-lexend-deca text-base leading-8 text-[#181411]/75 sm:text-lg sm:leading-9">
           <p>
@@ -177,7 +143,7 @@ const Info: React.FC = () => {
             Per il nostro matrimonio abbiamo scelto una selezione di brani pop rock da party scatenato con qualche piccola chicca extra, unita all’intrattenimento live dei <strong>Fratelli Pleasure Orchestra, una band esperta di Swing’n’Roll</strong> che siamo sicuri vi farà ballare e divertire da matti!
           </p>
           <p className="text-4xl leading-none" aria-label="Musica e ballo">
-            🎶 🎵 💃 🕺 🪩
+            🎶 💃 🕺 🪩 🎵
           </p>
         </div>
       </section>
