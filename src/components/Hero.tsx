@@ -4,7 +4,7 @@ import React from 'react';
 const Hero: React.FC = () => {
   return (
     <section className="w-full text-center" aria-labelledby="hero-title">
-      <div className="w-full overflow-hidden bg-[#fffaf5] px-0 sm:px-8 md:px-12 lg:px-16">
+      <div className="mx-auto w-full max-w-none overflow-hidden bg-[#fffaf5] px-0 sm:px-8 md:px-12 lg:max-w-[75%] lg:px-0">
         <Image
           src="/images/segnaletiche.png"
           alt="Illustrazione segnaletica di Angie e Fabio"
