@@ -11,18 +11,8 @@ const Info: React.FC = () => {
   // Keep this fixed to the confirmed wedding date instead of relying on a
   // potentially stale or differently formatted environment value.
   const weddingTimestamp = Date.UTC(2027, 4, 29, 14, 0, 0);
-  const weddingDate = new Date(weddingTimestamp);
-  const dateString = weddingDate.toLocaleDateString('it-IT', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    timeZone: 'Europe/Rome',
-  });
-  const timeString = weddingDate.toLocaleTimeString('it-IT', {
-    hour: '2-digit',
-    minute: '2-digit',
-    timeZone: 'Europe/Rome',
-  });
+  const dateString = '29 maggio 2027';
+  const timeString = '16:00';
   const location = 'Cascina Reale Cussanio a Fossano';
   const locationAddress = 'Cascina Reale Cussanio, Via S. Maria, 12045 Fossano CN';
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(locationAddress)}`;
