@@ -35,6 +35,16 @@
     --input: 0 0% 89.8%;
     --ring: 0 0% 63.9%;
     --radius: 0.5rem;
+    --wedding-ink: #12100e;
+    --wedding-ink-2: #1c1916;
+    --wedding-cream: #f3eadb;
+    --wedding-amber: #f5a524;
+    --wedding-muted-dark: #cfc6b8;
+    --wedding-muted-cream: #5a5148;
+    --wedding-border-dark: #2e2923;
+    --wedding-roadmap-bg: #f3eadb;
+    --wedding-roadmap-icon-bg: #f5a524;
+    --wedding-accent: #f5a524;
   }
 
   .dark {
@@ -61,7 +71,12 @@
 }
 
 @layer base {
+  html {
+    font-synthesis: none;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    background-color: var(--wedding-ink);
+    color: var(--wedding-cream);
   }
 }

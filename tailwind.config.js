@@ -53,9 +53,10 @@ module.exports = {
       },
       fontFamily: {
         lavishly: ['var(--font-lavishly)'],
-        'lexend-deca': ['var(--font-lexend-deca)'],
+        lexend: ['var(--font-lexend)', 'Arial', 'sans-serif'],
+        'lexend-deca': ['var(--font-lexend)', 'Arial', 'sans-serif'],
         epilogue: ['var(--font-epilogue)'],
-        rockidate: ['Rockidate', 'cursive'],
+        rockidate: ['Rockidate', 'Georgia', 'serif'],
       },
       keyframes: {
         'accordion-down': {
