@@ -67,13 +67,11 @@ const Info: React.FC = () => {
               { title: 'WE CAKE!', detail: 'Taglio torta', time: '21:30' },
               { title: 'WE PARTY!', detail: 'Open bar + DJ set', time: '22:30' },
             ].map(({ title, detail, time }, index) => (
-              <li key={title} className="flex min-h-40 flex-col justify-between bg-[var(--wedding-cream)] p-5 sm:p-6">
-                <div className="flex items-start justify-between">
-                  <span className="font-rockidate text-3xl text-[var(--wedding-amber)]">0{index + 1}</span>
-                  <time className="font-lexend-deca text-xs font-bold tabular-nums text-[var(--wedding-muted-cream)]" dateTime={`2027-05-29T${time}:00+02:00`}>{time}</time>
-                </div>
-                <div>
-                  <p className="font-rockidate text-2xl text-[var(--wedding-ink)]">{title}</p>
+              <li key={title} className="flex min-h-44 flex-col bg-[var(--wedding-cream)] p-5 sm:p-6">
+                <span className="font-lexend-deca text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--wedding-muted-cream)]">Tappa 0{index + 1}</span>
+                <time className="mt-4 font-lexend-deca text-4xl font-bold leading-none tracking-[-0.06em] tabular-nums text-[var(--wedding-amber)] sm:text-5xl" dateTime={`2027-05-29T${time}:00+02:00`}>{time}</time>
+                <div className="mt-auto pt-5">
+                  <p className="font-lexend-deca text-base font-extrabold tracking-[0.08em] text-[var(--wedding-ink)] sm:text-lg">{title}</p>
                   <p className="mt-1 font-lexend-deca text-sm text-[var(--wedding-muted-cream)]">{detail}</p>
                 </div>
               </li>
