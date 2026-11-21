@@ -17,8 +17,8 @@ const lexend = Lexend_Deca({
 });
 
 export const metadata: Metadata = {
-  title: 'Fabio & Angie Wedding',
-  description: 'Join us in celebrating our special day',
+  title: 'Angie & Fabio — ci sposiamo',
+  description: 'Tutte le informazioni per festeggiare con Angie e Fabio il 29 maggio 2027 a Cascina Reale Cussanio, Fossano.',
   generator: 'v0.app',
   icons: {
     icon: [
@@ -45,7 +45,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="it">
       <body className={`${lavishly.variable} ${lexend.variable} font-lexend antialiased`}>
         {children}
         <Analytics />

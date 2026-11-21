@@ -18,7 +18,7 @@ const Info: React.FC = () => {
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(locationAddress)}`;
 
   return (
-    <div className="space-y-24 bg-[var(--wedding-ink)] py-12 text-[var(--wedding-cream)] sm:py-16">
+    <div className="space-y-20 bg-[var(--wedding-ink)] pb-12 pt-2 text-[var(--wedding-cream)] sm:space-y-28 sm:pb-16">
       <section className="mx-auto max-w-3xl px-4 text-center" aria-labelledby="welcome-message-title">
         <h2 id="welcome-message-title" className="text-4xl leading-tight text-[var(--wedding-cream)] sm:text-5xl">
           <span className="font-lexend-deca text-[17px] leading-8 sm:text-lg">
