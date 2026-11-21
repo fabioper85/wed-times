@@ -40,18 +40,14 @@ const Countdown = ({ target }: { target: number }) => {
   ];
 
   return (
-    <section aria-label="Conto alla rovescia per il matrimonio" className="mt-12 border-y-2 border-[var(--wedding-cream)] px-4 py-8 text-center text-[var(--wedding-cream)]">
-      <p className="font-lexend-deca text-xs font-semibold uppercase tracking-[0.28em] text-[var(--wedding-muted-dark)]">
-        ARE YOU READY?!
-      </p>
-      <h2 className="mt-3 font-rockidate text-5xl text-[var(--wedding-cream)] sm:text-6xl">Ci vediamo tra</h2>
-      <div className="mx-auto mt-8 grid max-w-3xl grid-cols-2 gap-x-6 gap-y-7 sm:grid-cols-4 sm:gap-x-8" aria-live="polite">
+    <section aria-label="Conto alla rovescia per il matrimonio" className="mt-10 border-y border-[var(--wedding-cream)]/35 px-4 py-8 text-center text-[var(--wedding-cream)] sm:py-10">
+      <div className="mx-auto grid max-w-4xl grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4 sm:gap-x-8" aria-live="polite">
         {units.map(({ label, value }) => (
           <div key={label}>
-            <span className={`block font-rockidate text-5xl font-normal leading-none tabular-nums sm:text-6xl ${label === 'Giorni' ? 'text-[var(--wedding-amber)]' : 'text-[var(--wedding-cream)]'}`}>
+            <span className={`block font-rockidate text-6xl font-normal leading-none tabular-nums sm:text-7xl ${label === 'Giorni' ? 'text-[var(--wedding-amber)]' : 'text-[var(--wedding-cream)]'}`}>
               {timeLeft ? String(value).padStart(2, '0') : '--'}
             </span>
-            <span className="mt-3 block font-lexend-deca text-sm tracking-[0.18em] text-[var(--wedding-muted-dark)]">
+            <span className="mt-3 block font-lexend-deca text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--wedding-muted-dark)] sm:text-xs">
               {label}
             </span>
           </div>

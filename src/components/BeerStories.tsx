@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 
@@ -37,6 +36,7 @@ const stories = [
 
 export default function BeerStories() {
   const [openStory, setOpenStory] = useState<string | null>(null);
+  const [showAllStories, setShowAllStories] = useState(false);
 
   return (
     <section id="beer-stories" className="-mx-4 bg-[var(--wedding-ink-2)] px-4 py-12 text-center sm:py-16" aria-labelledby="beer-stories-title">
@@ -45,7 +45,7 @@ export default function BeerStories() {
         Le BeerStories nascono da un’idea della sposa, che ha deciso di conservare le bottiglie più significative dei mesi di preparazione al matrimonio per trasformarle in decorazioni luminose disseminate qui e là a Cascina Reale. Aguzza la vista in location per trovarne il più possibile e leggi qui sotto la storia di ogni birretta, potrebbe esserci anche la tua! &lt;3.
       </p>
       <div className="mx-auto mt-10 grid max-w-5xl gap-3 text-left sm:grid-cols-2 lg:grid-cols-3">
-        {stories.map(([number, title, date, description]) => {
+        {stories.slice(0, showAllStories ? stories.length : 6).map(([number, title, date, description]) => {
           const isOpen = openStory === number;
           return (
             <article key={number} className="border-2 border-[var(--wedding-cream)]">
@@ -68,15 +68,14 @@ export default function BeerStories() {
           );
         })}
       </div>
-      <div className="mt-10 overflow-hidden rounded-2xl bg-white">
-        <Image
-          src="/images/bikers.jpg"
-          alt="Illustrazione di due motociclisti in viaggio"
-          width={1600}
-          height={1125}
-          className="h-auto w-full"
-        />
-      </div>
+      <button
+        type="button"
+        aria-expanded={showAllStories}
+        onClick={() => setShowAllStories((current) => !current)}
+        className="mt-8 min-h-12 border border-[var(--wedding-amber)] px-6 font-lexend-deca text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--wedding-amber)] transition-colors hover:bg-[var(--wedding-amber)] hover:text-[var(--wedding-ink)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--wedding-cream)]"
+      >
+        {showAllStories ? 'Mostra meno' : `Tutte le ${stories.length} storie`}
+      </button>
     </section>
   );
 }
