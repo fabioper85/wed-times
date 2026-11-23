@@ -92,7 +92,7 @@ export default function Providers() {
         <h2 id="providers-title" className="font-rockidate text-5xl text-[var(--wedding-cream)] sm:text-6xl">
           I nostri fornitori
         </h2>
-        <p className="mx-auto mt-5 max-w-2xl font-lexend-deca text-base leading-8 text-[var(--wedding-cream)]/75 sm:text-lg">
+        <p className="mx-auto mt-5 max-w-2xl font-text text-base leading-8 text-[var(--wedding-cream)]/75 sm:text-lg">
           Le persone e le realtà che stanno rendendo speciale il nostro grande giorno.
         </p>
       </div>
@@ -107,11 +107,11 @@ export default function Providers() {
             onMouseLeave={() => setHoveredCategory(null)}
             onFocus={() => setHoveredCategory(provider.category)}
             onBlur={() => setHoveredCategory(null)}
-            className="min-h-11 border border-[var(--wedding-cream)] px-4 py-2 font-lexend-deca text-sm tracking-[0.08em] text-[var(--wedding-cream)] transition-opacity hover:opacity-80 sm:text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--wedding-amber)]"
+            className="min-h-11 border border-[var(--wedding-cream)] px-4 py-2 font-text text-base tracking-[0.08em] text-[var(--wedding-cream)] transition-opacity hover:opacity-80 sm:text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--wedding-amber)]"
             style={{
               transform: hoveredCategory === provider.category ? 'scale(1.08)' : undefined,
               color: hoveredCategory === provider.category ? 'var(--wedding-accent)' : undefined,
-              textShadow: hoveredCategory === provider.category ? '0 6px 18px rgba(168, 68, 95, 0.2)' : undefined,
+              textShadow: hoveredCategory === provider.category ? '0 6px 18px rgba(251, 198, 66, 0.2)' : undefined,
             }}
           >
             {provider.category}
@@ -142,10 +142,10 @@ export default function Providers() {
               >
                 <X aria-hidden="true" className="size-4" />
               </button>
-              <h3 id="provider-dialog-category" className="font-lexend-deca text-sm font-semibold uppercase tracking-[0.22em] text-[var(--wedding-cream)]/55">
+              <h3 id="provider-dialog-category" className="font-lexend-deca text-sm font-bold uppercase tracking-[0.22em] text-[var(--wedding-cream)]/55">
                 {selected.category}
               </h3>
-              <p className="mt-2 font-lexend-deca text-3xl font-semibold leading-tight text-[var(--wedding-cream)] sm:text-4xl">
+              <p className="mt-2 font-lexend-deca text-3xl font-bold leading-tight text-[var(--wedding-cream)] sm:text-4xl">
                 {selected.name}
               </p>
               <div className="mx-auto mt-4 h-px w-12 bg-[var(--wedding-accent)]/40" />
@@ -166,7 +166,7 @@ export default function Providers() {
                   ))}
                 </div>
               ) : (
-                <p className="mt-4 font-lexend-deca text-sm text-[var(--wedding-cream)]/65">
+                <p className="mt-4 font-text text-base text-[var(--wedding-cream)]/65">
                   Link in arrivo
                 </p>
               )}

@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
-import { Lavishly_Yours, Lexend_Deca } from 'next/font/google'
+import { Courier_Prime, Lexend_Deca } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const lavishly = Lavishly_Yours({ 
-  weight: '400',
+const courierPrime = Courier_Prime({
+  weight: ['400', '700'],
   subsets: ['latin'],
-  variable: '--font-lavishly',
+  variable: '--font-text',
   display: 'swap',
 });
 
@@ -46,7 +46,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="it">
-      <body className={`${lavishly.variable} ${lexend.variable} font-lexend antialiased`}>
+      <body className={`${courierPrime.variable} ${lexend.variable} font-text antialiased`}>
         {children}
         <Analytics />
       </body>

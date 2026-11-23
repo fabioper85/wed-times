@@ -41,7 +41,7 @@ export default function BeerStories() {
   return (
     <section id="beer-stories" className="-mx-4 bg-[var(--wedding-ink-2)] px-4 py-12 text-center sm:py-16" aria-labelledby="beer-stories-title">
       <h2 id="beer-stories-title" className="font-rockidate text-5xl text-[var(--wedding-cream)] sm:text-6xl">Le Beer Stories</h2>
-      <p className="mx-auto mt-6 max-w-3xl font-lexend-deca text-base leading-8 text-[var(--wedding-cream)]/75 sm:text-lg sm:leading-9">
+      <p className="mx-auto mt-6 max-w-3xl font-text text-base leading-8 text-[var(--wedding-cream)]/75 sm:text-lg sm:leading-9">
         Le BeerStories nascono da un’idea della sposa, che ha deciso di conservare le bottiglie più significative dei mesi di preparazione al matrimonio per trasformarle in decorazioni luminose disseminate qui e là a Cascina Reale. Aguzza la vista in location per trovarne il più possibile e leggi qui sotto la storia di ogni birretta, potrebbe esserci anche la tua! &lt;3.
       </p>
       <div className="mx-auto mt-10 grid max-w-5xl gap-3 text-left sm:grid-cols-2 lg:grid-cols-3">
@@ -56,12 +56,12 @@ export default function BeerStories() {
                 onClick={() => setOpenStory(isOpen ? null : number)}
                 className="flex min-h-14 w-full items-center gap-3 px-4 py-4 text-left transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[var(--wedding-amber)] sm:px-5"
               >
-                <span className="min-w-12 font-lexend-deca text-xs font-semibold tracking-[0.12em] text-[var(--wedding-amber)]">{number}</span>
-                <span className="flex-1 font-lexend-deca text-base font-semibold text-[var(--wedding-cream)] sm:text-lg">{title}</span>
-                <span className="hidden font-lexend-deca text-xs text-[var(--wedding-muted-dark)] sm:block">{date}</span>
+                <span className="min-w-12 font-text text-xs font-bold tracking-[0.12em] text-[var(--wedding-amber)]">{number}</span>
+                <span className="flex-1 font-text text-base font-bold text-[var(--wedding-cream)] sm:text-lg">{title}</span>
+                <span className="hidden font-text text-xs text-[var(--wedding-muted-dark)] sm:block">{date}</span>
                 <ChevronDown className={`size-5 shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
               </button>
-              <div id={`beer-story-${number.replace('/', '-')}`} hidden={!isOpen} className="px-5 pb-5 pl-20 font-lexend-deca text-sm leading-7 text-[var(--wedding-muted-dark)] sm:px-7 sm:pl-28 sm:text-base">
+              <div id={`beer-story-${number.replace('/', '-')}`} hidden={!isOpen} className="px-5 pb-5 pl-20 font-text text-base leading-7 text-[var(--wedding-muted-dark)] sm:px-7 sm:pl-28">
                 <p className="sm:max-w-3xl">{description}</p>
               </div>
             </article>
@@ -72,7 +72,7 @@ export default function BeerStories() {
         type="button"
         aria-expanded={showAllStories}
         onClick={() => setShowAllStories((current) => !current)}
-        className="mt-8 min-h-12 border border-[var(--wedding-amber)] px-6 font-lexend-deca text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--wedding-amber)] transition-colors hover:bg-[var(--wedding-amber)] hover:text-[var(--wedding-ink)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--wedding-cream)]"
+        className="mt-8 min-h-12 border border-[var(--wedding-amber)] px-6 font-text text-base font-bold uppercase tracking-[0.2em] text-[var(--wedding-amber)] transition-colors hover:bg-[var(--wedding-amber)] hover:text-[var(--wedding-ink)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--wedding-cream)]"
       >
         {showAllStories ? 'Mostra meno' : `Tutte le ${stories.length} storie`}
       </button>

@@ -44,10 +44,10 @@ const Countdown = ({ target }: { target: number }) => {
       <div className="mx-auto grid max-w-5xl grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4 sm:gap-x-10" aria-live="off">
         {units.map(({ label, value }) => (
           <div key={label} className="flex flex-col items-center">
-            <span className={`font-lexend-deca text-6xl font-semibold leading-none tracking-[-0.07em] tabular-nums sm:text-7xl lg:text-[88px] ${label === 'Giorni' ? 'text-[var(--wedding-amber)]' : 'text-[var(--wedding-cream)]'}`}>
+            <span className={`font-text text-6xl font-bold leading-none tracking-[-0.07em] tabular-nums sm:text-7xl lg:text-[88px] ${label === 'Giorni' ? 'text-[var(--wedding-amber)]' : 'text-[var(--wedding-cream)]'}`}>
               {timeLeft ? String(value).padStart(2, '0') : '--'}
             </span>
-            <span className="mt-3 font-lexend-deca text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--wedding-muted-dark)] sm:text-xs">
+            <span className="mt-3 font-text text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--wedding-muted-dark)] sm:text-xs">
               {label}
             </span>
           </div>
