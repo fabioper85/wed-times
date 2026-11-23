@@ -24,16 +24,16 @@ const Info: React.FC = () => {
       <section id="info" className="mx-auto w-full max-w-6xl px-5 sm:px-8" aria-label="Data, orario e location">
         <div className="grid border-y border-[var(--wedding-cream)]/25 sm:grid-cols-3">
           <div className="border-b border-[var(--wedding-cream)]/20 py-6 sm:border-b-0 sm:border-r sm:px-7 sm:py-8">
-            <p className="font-text text-[10px] font-bold uppercase tracking-[0.24em] text-[var(--wedding-amber)]">Data</p>
-            <p className="mt-3 font-text text-lg font-bold uppercase leading-snug tracking-[0.04em] text-[var(--wedding-cream)] sm:text-xl">{dateString}</p>
+            <p className="font-text text-xs font-bold uppercase tracking-[0.24em] text-[var(--wedding-amber)] sm:text-sm">Data</p>
+            <p className="mt-3 font-text text-xl font-bold uppercase leading-snug tracking-[0.04em] text-[var(--wedding-cream)] sm:text-2xl">{dateString}</p>
           </div>
           <div className="border-b border-[var(--wedding-cream)]/20 py-6 sm:border-b-0 sm:border-r sm:px-7 sm:py-8">
-            <p className="font-text text-[10px] font-bold uppercase tracking-[0.24em] text-[var(--wedding-amber)]">Orario</p>
-            <p className="mt-3 font-text text-lg font-bold uppercase leading-snug tracking-[0.04em] text-[var(--wedding-cream)] sm:text-xl">Ore {timeString}</p>
+            <p className="font-text text-xs font-bold uppercase tracking-[0.24em] text-[var(--wedding-amber)] sm:text-sm">Orario</p>
+            <p className="mt-3 font-text text-xl font-bold uppercase leading-snug tracking-[0.04em] text-[var(--wedding-cream)] sm:text-2xl">Ore {timeString}</p>
           </div>
-          <div className="py-6 sm:px-7 sm:py-8">
-            <p className="font-text text-[10px] font-bold uppercase tracking-[0.24em] text-[var(--wedding-amber)]">Location · apri su Maps</p>
-            <a href={mapsUrl} target="_blank" rel="noreferrer" aria-label={`Apri ${locationAddress} su Google Maps`} className="mt-3 inline-block font-text text-base font-bold uppercase leading-snug tracking-[0.04em] text-[var(--wedding-cream)] underline decoration-[var(--wedding-amber)] decoration-1 underline-offset-4 transition-colors hover:text-[var(--wedding-amber)] sm:text-lg">
+          <div className="bg-[var(--wedding-accent)] px-5 py-6 text-[#181411] sm:px-7 sm:py-8">
+            <p className="font-text text-xs font-bold uppercase tracking-[0.2em] text-[#181411] sm:text-sm">Location · apri su Maps</p>
+            <a href={mapsUrl} target="_blank" rel="noreferrer" aria-label={`Apri ${locationAddress} su Google Maps`} className="mt-3 inline-block font-text text-lg font-bold uppercase leading-snug tracking-[0.04em] text-[#181411] underline decoration-[#181411] decoration-1 underline-offset-4 transition-opacity hover:opacity-70 sm:text-xl">
               Cascina Reale Cussanio, Fossano
             </a>
           </div>
