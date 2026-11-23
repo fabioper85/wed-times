@@ -52,24 +52,25 @@ const Info: React.FC = () => {
       </section>
 
       <section id="roadmap" className="bg-[var(--wedding-cream)] px-5 py-12 text-[var(--wedding-ink)] sm:px-8 sm:py-16" aria-labelledby="wedding-roadmap-title">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-screen-2xl">
           <div className="flex flex-col justify-between gap-2 border-b border-[var(--wedding-ink)]/25 pb-5 sm:flex-row sm:items-end">
             <div>
               <p className="font-text text-xs font-bold uppercase tracking-[0.24em] text-[var(--wedding-muted-cream)] sm:text-sm">Programma della giornata</p>
               <h2 id="wedding-roadmap-title" className="mt-4 font-rockidate text-5xl leading-tight text-[var(--wedding-ink)] sm:mt-5 sm:text-6xl">Wedding Roadmap</h2>
             </div>
           </div>
-          <ol className="mt-6 grid gap-px bg-[var(--wedding-ink)]/15 sm:grid-cols-2 lg:grid-cols-5" aria-label="Programma del matrimonio">
+          <ol className="mt-10 grid grid-cols-1 lg:grid-cols-5" aria-label="Programma del matrimonio">
             {[
-              { title: 'WE MEET!', detail: 'Ritrovo', time: '16.00', dateTime: '16:00' },
+              { title: 'WE MEET!', detail: 'Ritrovo', time: '16.00' },
               { title: 'WE DO!', detail: 'Cerimonia', time: '17:00' },
               { title: 'WE EAT!', detail: 'Cena a buffet', time: '18:30' },
               { title: 'WE CAKE!', detail: 'Taglio torta', time: '21:30' },
               { title: 'WE PARTY!', detail: 'Open bar + DJ set', time: '22:30' },
-            ].map(({ title, detail, time }) => (
-              <li key={title} className="flex min-h-48 flex-col bg-[var(--wedding-cream)] p-5 sm:min-h-52 sm:p-6">
+            ].map(({ title, detail, time }, index) => (
+              <li key={title} className="relative border-l-2 border-[var(--wedding-amber)]/65 px-6 pb-8 pt-1 last:border-l-transparent lg:min-h-64 lg:border-l-0 lg:border-t-2 lg:px-5 lg:pb-4 lg:pt-8">
+                <span aria-hidden="true" className="absolute -left-[15px] top-0 flex size-7 items-center justify-center rounded-full border-2 border-[var(--wedding-ink)] bg-[var(--wedding-amber)] font-text text-xs font-bold text-[var(--wedding-ink)] lg:-top-[15px] lg:left-0">{String(index + 1).padStart(2, '0')}</span>
                 <time className="font-text text-5xl font-bold leading-none tracking-[-0.06em] tabular-nums text-[var(--wedding-amber)] sm:text-6xl" dateTime={`2027-05-29T${time.replace('.', ':')}:00+02:00`}>{time}</time>
-                <div className="mt-auto pt-5">
+                <div className="pt-5">
                   <p className="font-lexend-deca text-lg font-bold tracking-[0.08em] text-[var(--wedding-ink)] sm:text-xl">{title}</p>
                   <p className="mt-1 font-text text-lg text-[var(--wedding-muted-cream)]">{detail}</p>
                 </div>
