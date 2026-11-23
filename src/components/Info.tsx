@@ -55,22 +55,23 @@ const Info: React.FC = () => {
         <div className="mx-auto max-w-6xl">
           <div className="flex flex-col justify-between gap-2 border-b border-[var(--wedding-ink)]/25 pb-5 sm:flex-row sm:items-end">
             <div>
-              <p className="font-text text-[10px] font-bold uppercase tracking-[0.24em] text-[var(--wedding-muted-cream)]">Programma della giornata</p>
-              <h2 id="wedding-roadmap-title" className="mt-1 font-rockidate text-5xl text-[var(--wedding-ink)] sm:text-6xl">Wedding roadmap</h2>
+              <p className="font-text text-xs font-bold uppercase tracking-[0.24em] text-[var(--wedding-muted-cream)] sm:text-sm">Programma della giornata</p>
+              <h2 id="wedding-roadmap-title" className="mt-4 font-rockidate text-5xl leading-tight text-[var(--wedding-ink)] sm:mt-5 sm:text-6xl">Wedding Roadmap</h2>
             </div>
           </div>
-          <ol className="mt-6 grid gap-px bg-[var(--wedding-ink)]/15 sm:grid-cols-2 lg:grid-cols-4" aria-label="Programma del matrimonio">
+          <ol className="mt-6 grid gap-px bg-[var(--wedding-ink)]/15 sm:grid-cols-2 lg:grid-cols-5" aria-label="Programma del matrimonio">
             {[
+              { title: 'WE MEET!', detail: 'Ritrovo', time: '16.00', dateTime: '16:00' },
               { title: 'WE DO!', detail: 'Cerimonia', time: '17:00' },
               { title: 'WE EAT!', detail: 'Cena a buffet', time: '18:30' },
               { title: 'WE CAKE!', detail: 'Taglio torta', time: '21:30' },
               { title: 'WE PARTY!', detail: 'Open bar + DJ set', time: '22:30' },
             ].map(({ title, detail, time }) => (
-              <li key={title} className="flex min-h-44 flex-col bg-[var(--wedding-cream)] p-5 sm:p-6">
-                <time className="font-text text-4xl font-bold leading-none tracking-[-0.06em] tabular-nums text-[var(--wedding-amber)] sm:text-5xl" dateTime={`2027-05-29T${time}:00+02:00`}>{time}</time>
+              <li key={title} className="flex min-h-48 flex-col bg-[var(--wedding-cream)] p-5 sm:min-h-52 sm:p-6">
+                <time className="font-text text-5xl font-bold leading-none tracking-[-0.06em] tabular-nums text-[var(--wedding-amber)] sm:text-6xl" dateTime={`2027-05-29T${time.replace('.', ':')}:00+02:00`}>{time}</time>
                 <div className="mt-auto pt-5">
-                  <p className="font-lexend-deca text-base font-bold tracking-[0.08em] text-[var(--wedding-ink)] sm:text-lg">{title}</p>
-                  <p className="mt-1 font-text text-base text-[var(--wedding-muted-cream)]">{detail}</p>
+                  <p className="font-lexend-deca text-lg font-bold tracking-[0.08em] text-[var(--wedding-ink)] sm:text-xl">{title}</p>
+                  <p className="mt-1 font-text text-lg text-[var(--wedding-muted-cream)]">{detail}</p>
                 </div>
               </li>
             ))}
