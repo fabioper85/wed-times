@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Instagram } from 'lucide-react';
+import { Instagram, Star } from 'lucide-react';
 import Countdown from './Countdown';
 import Providers from './Providers';
 import BeerStories from './BeerStories';
@@ -67,8 +67,11 @@ const Info: React.FC = () => {
               { title: 'WE CAKE!', detail: 'Taglio torta', time: '21:30' },
               { title: 'WE PARTY!', detail: 'Open bar + DJ set', time: '22:30' },
             ].map(({ title, detail, time }, index) => (
-              <li key={title} className="relative border-l-2 border-[var(--wedding-amber)]/65 px-6 pb-8 pt-1 last:border-l-transparent lg:min-h-64 lg:border-l-0 lg:border-t-2 lg:px-5 lg:pb-4 lg:pt-8">
-                <span aria-hidden="true" className="absolute -left-[15px] top-0 flex size-7 items-center justify-center rounded-full border-2 border-[var(--wedding-ink)] bg-[var(--wedding-amber)] font-text text-xs font-bold text-[var(--wedding-ink)] lg:-top-[15px] lg:left-0">{String(index + 1).padStart(2, '0')}</span>
+              <li key={title} className="relative border-l-2 border-[var(--wedding-ink)] px-6 pb-8 pt-1 last:border-l-transparent lg:min-h-64 lg:border-l-0 lg:border-t-2 lg:px-5 lg:pb-4 lg:pt-8">
+                <span aria-hidden="true" className="absolute -left-[18px] top-0 flex size-9 items-center justify-center lg:-top-[18px] lg:left-0">
+                  <Star className="absolute size-9 fill-[var(--wedding-accent)] text-[var(--wedding-accent)]" strokeWidth={1.5} />
+                  <span className="relative font-text text-xs font-bold leading-none text-[var(--wedding-ink)]">{index + 1}</span>
+                </span>
                 <time className="font-text text-5xl font-bold leading-none tracking-[-0.06em] tabular-nums text-[var(--wedding-amber)] sm:text-6xl" dateTime={`2027-05-29T${time.replace('.', ':')}:00+02:00`}>{time}</time>
                 <div className="pt-5">
                   <p className="font-lexend-deca text-lg font-bold tracking-[0.08em] text-[var(--wedding-ink)] sm:text-xl">{title}</p>
