@@ -41,7 +41,7 @@ const Countdown = ({ target }: { target: number }) => {
 
   return (
     <section aria-label="Conto alla rovescia per il matrimonio" className="px-4 py-6 text-center text-[var(--wedding-cream)] sm:py-8">
-      <h2 className="mb-8 font-rockidate text-4xl leading-tight text-[var(--wedding-cream)] sm:text-5xl">CI VEDIAMO TRA</h2>
+      <h2 className="mb-8 font-text text-4xl font-bold leading-tight tracking-[0.08em] text-[var(--wedding-cream)] sm:text-5xl">CI VEDIAMO TRA</h2>
       <div className="mx-auto grid max-w-5xl grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4 sm:gap-x-10" aria-live="off">
         {units.map(({ label, value }) => (
           <div key={label} className="flex flex-col items-center">
