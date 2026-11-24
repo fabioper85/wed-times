@@ -121,13 +121,13 @@ const Info: React.FC = () => {
             Casa nostra è chiamata affettuosamente “al Riff” e chi ci conosce bene sa quanto entrambi amiamo la musica in tutte le sue sfumature. Insomma... <strong>o andiamo ad un concerto, o andiamo in moto, o andiamo ad un concerto in moto</strong>.
           </p>
         </div>
-        <div className="border-l border-[var(--wedding-amber)] pl-6 sm:pl-8">
-          <p className="font-text text-base leading-8 text-[var(--wedding-cream)]/75 sm:text-lg sm:leading-9">
+        <div className="bg-[var(--wedding-accent)] p-5 text-[var(--wedding-ink)] sm:p-7">
+          <p className="font-text text-base leading-8 text-[var(--wedding-ink)]/80 sm:text-lg sm:leading-9">
             Per il nostro matrimonio abbiamo scelto una selezione di brani pop rock da party scatenato con qualche piccola chicca extra, unita all’intrattenimento live dei
           </p>
-          <p className="mt-6 font-text text-[10px] font-bold uppercase tracking-[0.24em] text-[var(--wedding-amber)]">Special Guest live</p>
-          <h3 className="mt-3 font-rockidate text-4xl leading-tight text-[var(--wedding-cream)] sm:text-5xl">Fratelli Pleasure Orchestra</h3>
-          <p className="mt-4 font-text text-base leading-8 text-[var(--wedding-cream)]/75 sm:text-lg sm:leading-9">
+          <p className="mt-6 font-text text-[10px] font-bold uppercase tracking-[0.24em] text-[var(--wedding-ink)]">Special Guest live</p>
+          <h3 className="mt-3 font-rockidate text-4xl leading-tight text-[var(--wedding-ink)] sm:text-5xl">Fratelli Pleasure Orchestra</h3>
+          <p className="mt-4 font-text text-base leading-8 text-[var(--wedding-ink)]/80 sm:text-lg sm:leading-9">
             Una band esperta di Swing’n’Roll che siamo sicuri vi farà ballare e divertire da matti!
           </p>
         </div>
