@@ -114,15 +114,22 @@ const Info: React.FC = () => {
         </div>
       </section>
 
-      <section id="musica" className="mx-auto grid w-full max-w-6xl gap-8 px-5 sm:px-8 md:grid-cols-2 md:items-center md:gap-16" aria-labelledby="music-title">
+      <section id="musica" className="mx-auto grid w-full max-w-6xl gap-8 px-5 sm:px-8 md:grid-cols-2 md:items-start md:gap-16" aria-labelledby="music-title">
         <div>
-          <p className="font-text text-[10px] font-bold uppercase tracking-[0.24em] text-[var(--wedding-amber)]">Il nostro motto</p>
-          <h2 id="music-title" className="mt-4 max-w-xl font-rockidate text-4xl leading-tight text-[var(--wedding-cream)] sm:text-5xl">O andiamo a un concerto, o andiamo in moto, o andiamo a un concerto in moto.</h2>
+          <h2 id="music-title" className="font-rockidate text-5xl leading-tight text-[var(--wedding-cream)] sm:text-6xl">La Musica</h2>
+          <p className="mt-6 font-text text-base leading-8 text-[var(--wedding-cream)]/75 sm:text-lg sm:leading-9">
+            Casa nostra è chiamata affettuosamente “al Riff” e chi ci conosce bene sa quanto entrambi amiamo la musica in tutte le sue sfumature. Insomma... <strong>o andiamo ad un concerto, o andiamo in moto, o andiamo ad un concerto in moto</strong>.
+          </p>
         </div>
         <div className="border-l border-[var(--wedding-amber)] pl-6 sm:pl-8">
-          <p className="font-text text-[10px] font-bold uppercase tracking-[0.24em] text-[var(--wedding-amber)]">Special guest live</p>
+          <p className="font-text text-base leading-8 text-[var(--wedding-cream)]/75 sm:text-lg sm:leading-9">
+            Per il nostro matrimonio abbiamo scelto una selezione di brani pop rock da party scatenato con qualche piccola chicca extra, unita all’intrattenimento live dei
+          </p>
+          <p className="mt-6 font-text text-[10px] font-bold uppercase tracking-[0.24em] text-[var(--wedding-amber)]">Special Guest live</p>
           <h3 className="mt-3 font-rockidate text-4xl leading-tight text-[var(--wedding-cream)] sm:text-5xl">Fratelli Pleasure Orchestra</h3>
-          <p className="mt-4 font-text text-base leading-7 text-[var(--wedding-cream)]/70 sm:leading-8">Swing’n’Roll dal vivo e una selezione pop rock per una festa tutta da ballare: la nostra casa si chiama “al Riff”, il matrimonio non poteva suonare diverso.</p>
+          <p className="mt-4 font-text text-base leading-8 text-[var(--wedding-cream)]/75 sm:text-lg sm:leading-9">
+            Una band esperta di Swing’n’Roll che siamo sicuri vi farà ballare e divertire da matti!
+          </p>
         </div>
       </section>
 
