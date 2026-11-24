@@ -43,11 +43,31 @@ const Info: React.FC = () => {
       <section className="mx-auto grid w-full max-w-6xl gap-6 px-5 sm:px-8 md:grid-cols-[0.72fr_1.28fr] md:items-start md:gap-12" aria-labelledby="spoiler-title">
         <div>
           <p className="font-text text-[10px] font-bold uppercase tracking-[0.24em] text-[var(--wedding-amber)]">Il giorno del matrimonio</p>
-          <h2 id="spoiler-title" className="mt-2 font-rockidate text-5xl leading-tight text-[var(--wedding-cream)] sm:text-6xl">Qualche spoiler</h2>
+          <h2 id="spoiler-title" className="mt-2 font-text text-5xl font-bold leading-tight text-[var(--wedding-cream)] sm:text-6xl">Qualche Spoiler</h2>
         </div>
-        <div className="font-text text-base leading-7 text-[var(--wedding-cream)]/75 sm:leading-8">
-          <p>Unione civile con firma in Comune e rito simbolico: i genitori ci accompagneranno all’altare e le fedi passeranno di mano in mano tra gli invitati.</p>
-          <p className="mt-4">Poi buffet open sitting con isole tematiche, pic-nic per i più piccoli e un grande giardino per ballare. <span className="font-bold">Nessun dress code: porta solo un paio di scarpe comode di scorta.</span></p>
+        <div className="space-y-4 font-text text-base leading-7 text-[var(--wedding-cream)]/75 sm:space-y-6 sm:leading-8">
+          <p>
+            La nostra sarà un’unione civile e firmeremo ufficialmente in Comune. Insieme a te, il 29 Maggio,
+            celebreremo quindi un rito simbolico. Verremo accompagnati “all’altare” da entrambi i nostri genitori e le
+            nostre fedi passeranno di mano in mano tra gli invitati, accogliendo tutto l’affetto possibile.
+          </p>
+          <p>
+            Dopo il “sì” ci piaceva l’idea di una serata dinamica, per cui sarà previsto un buffet “open sitting”
+            (potrai quindi sederti dove vorrai) con diverse isole tematiche e portate di cibo a scaglioni. I più piccini,
+            invece, avranno un pic-nic tutto per loro e intrattenimento dedicato.
+          </p>
+          <p>
+            Confidando in una splendida giornata di sole (toccamose va’!), avrai a disposizione all’interno del
+            complesso un grande giardino dove chiacchierare, ridere e ballare insieme a noi.
+          </p>
+          <p className="bg-[var(--wedding-accent)] p-5 text-[var(--wedding-ink)] sm:p-6">
+            <strong>Non è richiesto uno specifico dress-code</strong>, desideriamo che i nostri ospiti si sentano a loro
+            agio nei vestiti che preferiscono. Ciò che ci sentiamo di consigliare è un bel paio di scarpe comode di scorta!
+          </p>
+          <p>
+            Last, but not least: abbiamo cercato di rendere questa giornata il più etica possibile, scegliendo dove si
+            poteva materiali riciclabili e biodegradabili.
+          </p>
         </div>
       </section>
 
