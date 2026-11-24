@@ -11,7 +11,18 @@ const Info: React.FC = () => {
   // Keep this fixed to the confirmed wedding date instead of relying on a
   // potentially stale or differently formatted environment value.
   const weddingTimestamp = Date.UTC(2027, 4, 29, 14, 0, 0);
-  const dateString = '29 maggio 2027';
+  const weddingDate = new Date(weddingTimestamp);
+  const dateString = new Intl.DateTimeFormat('it-IT', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'Europe/Rome',
+  }).format(weddingDate);
+  const weddingDateForCopy = new Intl.DateTimeFormat('it-IT', {
+    day: 'numeric',
+    month: 'long',
+    timeZone: 'Europe/Rome',
+  }).format(weddingDate);
   const timeString = '16:00';
   const location = 'Cascina Reale Cussanio a Fossano';
   const locationAddress = 'Cascina Reale Cussanio, Via S. Maria, 12045 Fossano CN';
@@ -47,7 +58,7 @@ const Info: React.FC = () => {
         </div>
         <div className="space-y-4 font-text text-base leading-7 text-[var(--wedding-cream)]/75 sm:space-y-6 sm:leading-8">
           <p>
-            La nostra sarà un’unione civile e firmeremo ufficialmente in Comune. Insieme a te, il 29 Maggio,
+            La nostra sarà un’unione civile e firmeremo ufficialmente in Comune. Insieme a te, il {weddingDateForCopy},
             celebreremo quindi un rito simbolico. Verremo accompagnati “all’altare” da entrambi i nostri genitori e le
             nostre fedi passeranno di mano in mano tra gli invitati, accogliendo tutto l’affetto possibile.
           </p>
