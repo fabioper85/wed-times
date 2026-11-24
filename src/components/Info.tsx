@@ -98,8 +98,8 @@ const Info: React.FC = () => {
               { title: 'WE CAKE!', detail: 'Taglio torta', time: '21:30' },
               { title: 'WE PARTY!', detail: 'Open bar + DJ set', time: '22:30' },
             ].map(({ title, detail, time }, index) => (
-              <li key={title} className="relative px-6 pb-8 pt-1 text-center after:absolute after:left-0 after:top-[18px] after:bottom-[-18px] after:border-l-2 after:border-[var(--wedding-ink)]/35 after:content-[''] last:after:hidden lg:min-h-64 lg:px-5 lg:pb-4 lg:pt-8 lg:text-left lg:after:hidden">
-                <span aria-hidden="true" className="absolute -left-[18px] top-0 z-10 flex size-9 items-center justify-center lg:-top-[18px] lg:left-1/2 lg:-translate-x-1/2">
+              <li key={title} className="relative px-6 pb-8 pt-1 text-center after:absolute after:left-[calc(50%-89px)] after:top-[18px] after:bottom-[-18px] after:border-l-2 after:border-[var(--wedding-ink)]/35 after:content-[''] last:after:hidden sm:after:left-[calc(50%-107px)] lg:min-h-64 lg:px-5 lg:pb-4 lg:pt-8 lg:text-left lg:after:hidden">
+                <span aria-hidden="true" className="absolute left-[calc(50%-107px)] top-0 z-10 flex size-9 items-center justify-center sm:left-[calc(50%-125px)] lg:-top-[18px] lg:left-1/2 lg:-translate-x-1/2">
                   <Star className="absolute size-9 rotate-45 fill-[var(--wedding-accent)] text-[var(--wedding-accent)]" strokeWidth={1.5} />
                   <span className="relative font-text text-xs font-bold leading-none text-[var(--wedding-ink)]">{index + 1}</span>
                 </span>
