@@ -31,7 +31,6 @@ const Hero: React.FC = () => {
         <div className="order-1 mx-auto w-full max-w-[540px] md:order-2 md:max-w-none">
           <div className="relative border border-[var(--wedding-cream)]/30 bg-[var(--wedding-ink-2)] p-2 shadow-[12px_12px_0_var(--wedding-amber)] sm:p-3">
             <Image src="/images/segnaletiche.png" alt="Illustrazione segnaletica di Angie e Fabio" width={1536} height={1024} priority className="h-auto w-full" />
-            <span className="absolute -bottom-4 -left-3 bg-[var(--wedding-cream)] px-3 py-2 font-text text-[9px] font-bold uppercase tracking-[0.18em] text-[var(--wedding-ink)] sm:-left-5 sm:text-[10px]">Angie & Fabio · Insieme</span>
           </div>
         </div>
       </section>
