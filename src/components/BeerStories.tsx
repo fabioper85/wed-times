@@ -48,22 +48,22 @@ export default function BeerStories() {
         {stories.slice(0, showAllStories ? stories.length : 6).map(([number, title, date, description]) => {
           const isOpen = openStory === number;
           return (
-            <article key={number} className="border-2 border-[var(--wedding-cream)]">
+            <article key={number} className={`border-2 transition-colors duration-200 ${isOpen ? 'border-[var(--wedding-accent)] bg-[var(--wedding-accent)] lg:col-span-3' : 'border-[var(--wedding-cream)]'}`}>
               <button
                 type="button"
                 aria-expanded={isOpen}
                 aria-controls={`beer-story-${number.replace('/', '-')}`}
                 onClick={() => setOpenStory(isOpen ? null : number)}
-                className="flex min-h-14 w-full flex-col gap-2 px-4 py-4 text-left transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[var(--wedding-amber)] sm:px-5"
+                className={`flex min-h-14 w-full flex-col gap-2 px-4 py-4 text-left transition-opacity ${isOpen ? 'hover:opacity-100' : 'hover:opacity-80'} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[var(--wedding-ink)] sm:px-5`}
               >
                 <span className="flex w-full items-center gap-3">
-                  <span className="shrink-0 font-text text-xs font-bold tracking-[0.12em] text-[var(--wedding-amber)]">{number}</span>
-                  <span className="font-text text-xs text-[var(--wedding-muted-dark)]">{date}</span>
-                  <ChevronDown className={`ml-auto size-5 shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
+                  <span className={`shrink-0 font-text text-xs font-bold tracking-[0.12em] ${isOpen ? 'text-[var(--wedding-ink)]' : 'text-[var(--wedding-amber)]'}`}>{number}</span>
+                  <span className={`font-text text-xs ${isOpen ? 'text-[var(--wedding-ink)]/75' : 'text-[var(--wedding-muted-dark)]'}`}>{date}</span>
+                  <ChevronDown className={`ml-auto size-5 shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180 text-[var(--wedding-ink)]' : 'text-[var(--wedding-cream)]'}`} aria-hidden="true" />
                 </span>
-                <span className="line-clamp-2 w-full font-text text-base font-bold text-[var(--wedding-cream)] sm:text-lg">{title}</span>
+                <span className={`line-clamp-2 w-full font-text text-base font-bold sm:text-lg ${isOpen ? 'text-[var(--wedding-ink)]' : 'text-[var(--wedding-cream)]'}`}>{title}</span>
               </button>
-              <div id={`beer-story-${number.replace('/', '-')}`} hidden={!isOpen} className="px-4 pb-5 font-text text-base leading-7 text-[var(--wedding-muted-dark)] sm:px-5">
+              <div id={`beer-story-${number.replace('/', '-')}`} hidden={!isOpen} className={`px-4 pb-5 font-text text-base leading-7 sm:px-5 ${isOpen ? 'text-[var(--wedding-ink)]' : 'text-[var(--wedding-muted-dark)]'}`}>
                 <p className="sm:max-w-3xl">{description}</p>
               </div>
             </article>
