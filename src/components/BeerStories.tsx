@@ -58,8 +58,8 @@ export default function BeerStories() {
               >
                 <span className="flex w-full items-center gap-3">
                   <span className="shrink-0 font-text text-xs font-bold tracking-[0.12em] text-[var(--wedding-amber)]">{number}</span>
-                  <span className="ml-auto font-text text-xs text-[var(--wedding-muted-dark)]">{date}</span>
-                  <ChevronDown className={`size-5 shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
+                  <span className="font-text text-xs text-[var(--wedding-muted-dark)]">{date}</span>
+                  <ChevronDown className={`ml-auto size-5 shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
                 </span>
                 <span className="line-clamp-2 w-full font-text text-base font-bold text-[var(--wedding-cream)] sm:text-lg">{title}</span>
               </button>
