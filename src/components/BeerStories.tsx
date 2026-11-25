@@ -54,14 +54,16 @@ export default function BeerStories() {
                 aria-expanded={isOpen}
                 aria-controls={`beer-story-${number.replace('/', '-')}`}
                 onClick={() => setOpenStory(isOpen ? null : number)}
-                className="flex min-h-14 w-full items-center gap-3 px-4 py-4 text-left transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[var(--wedding-amber)] sm:px-5"
+                className="flex min-h-14 w-full flex-col gap-2 px-4 py-4 text-left transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[var(--wedding-amber)] sm:px-5"
               >
-                <span className="min-w-12 font-text text-xs font-bold tracking-[0.12em] text-[var(--wedding-amber)]">{number}</span>
-                <span className="flex-1 font-text text-base font-bold text-[var(--wedding-cream)] sm:text-lg">{title}</span>
-                <span className="hidden font-text text-xs text-[var(--wedding-muted-dark)] sm:block">{date}</span>
-                <ChevronDown className={`size-5 shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
+                <span className="flex w-full items-center gap-3">
+                  <span className="shrink-0 font-text text-xs font-bold tracking-[0.12em] text-[var(--wedding-amber)]">{number}</span>
+                  <span className="ml-auto font-text text-xs text-[var(--wedding-muted-dark)]">{date}</span>
+                  <ChevronDown className={`size-5 shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
+                </span>
+                <span className="line-clamp-2 w-full font-text text-base font-bold text-[var(--wedding-cream)] sm:text-lg">{title}</span>
               </button>
-              <div id={`beer-story-${number.replace('/', '-')}`} hidden={!isOpen} className="px-5 pb-5 pl-20 font-text text-base leading-7 text-[var(--wedding-muted-dark)] sm:px-7 sm:pl-28">
+              <div id={`beer-story-${number.replace('/', '-')}`} hidden={!isOpen} className="px-4 pb-5 font-text text-base leading-7 text-[var(--wedding-muted-dark)] sm:px-5">
                 <p className="sm:max-w-3xl">{description}</p>
               </div>
             </article>
