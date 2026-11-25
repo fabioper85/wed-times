@@ -48,20 +48,20 @@ export default function BeerStories() {
         {stories.slice(0, showAllStories ? stories.length : 6).map(([number, title, date, description]) => {
           const isOpen = openStory === number;
           return (
-            <article key={number} className={`group border-2 transition-colors duration-200 hover:border-[var(--wedding-accent)] hover:bg-[var(--wedding-accent)] focus-within:border-[var(--wedding-accent)] focus-within:bg-[var(--wedding-accent)] ${isOpen ? 'border-[var(--wedding-accent)] bg-[var(--wedding-accent)] lg:col-span-3' : 'border-[var(--wedding-cream)]'}`}>
+            <article key={number} className={`group border-2 transition-colors duration-200 hover:border-[var(--wedding-accent)] hover:bg-[var(--wedding-accent)] ${isOpen ? 'border-[var(--wedding-accent)] bg-[var(--wedding-accent)] lg:col-span-3' : 'border-[var(--wedding-cream)]'}`}>
               <button
                 type="button"
                 aria-expanded={isOpen}
                 aria-controls={`beer-story-${number.replace('/', '-')}`}
                 onClick={() => setOpenStory(isOpen ? null : number)}
-                className="flex min-h-14 w-full flex-col gap-2 px-4 py-4 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[var(--wedding-ink)] sm:px-5"
+                className="flex min-h-14 w-full flex-col gap-2 px-4 py-4 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[var(--wedding-amber)] sm:px-5"
               >
                 <span className="flex w-full items-center gap-3">
-                  <span className={`shrink-0 font-text text-xs font-bold tracking-[0.12em] ${isOpen ? 'text-[var(--wedding-ink)]' : 'text-[var(--wedding-amber)] group-hover:text-[var(--wedding-ink)] group-focus-within:text-[var(--wedding-ink)]'}`}>{number}</span>
-                  <span className={`font-text text-xs ${isOpen ? 'text-[var(--wedding-ink)] underline decoration-[var(--wedding-ink)] underline-offset-4' : 'text-[var(--wedding-muted-dark)] group-hover:text-[var(--wedding-ink)] group-hover:underline group-hover:decoration-[var(--wedding-ink)] group-hover:underline-offset-4 group-focus-within:text-[var(--wedding-ink)] group-focus-within:underline group-focus-within:decoration-[var(--wedding-ink)] group-focus-within:underline-offset-4'}`}>{date}</span>
-                  <ChevronDown className={`ml-auto size-5 shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180 text-[var(--wedding-ink)]' : 'text-[var(--wedding-cream)] group-hover:text-[var(--wedding-ink)] group-focus-within:text-[var(--wedding-ink)]'}`} aria-hidden="true" />
+                  <span className={`shrink-0 font-text text-xs font-bold tracking-[0.12em] ${isOpen ? 'text-[var(--wedding-ink)]' : 'text-[var(--wedding-amber)] group-hover:text-[var(--wedding-ink)]'}`}>{number}</span>
+                  <span className={`font-text text-xs ${isOpen ? 'text-[var(--wedding-ink)] underline decoration-[var(--wedding-ink)] underline-offset-4' : 'text-[var(--wedding-muted-dark)] group-hover:text-[var(--wedding-ink)] group-hover:underline group-hover:decoration-[var(--wedding-ink)] group-hover:underline-offset-4'}`}>{date}</span>
+                  <ChevronDown className={`ml-auto size-5 shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180 text-[var(--wedding-ink)]' : 'text-[var(--wedding-cream)] group-hover:text-[var(--wedding-ink)]'}`} aria-hidden="true" />
                 </span>
-                <span className={`line-clamp-2 w-full font-text text-base font-bold sm:text-lg ${isOpen ? 'text-[var(--wedding-ink)]' : 'text-[var(--wedding-cream)] group-hover:text-[var(--wedding-ink)] group-focus-within:text-[var(--wedding-ink)]'}`}>{title}</span>
+                <span className={`line-clamp-2 w-full font-text text-base font-bold sm:text-lg ${isOpen ? 'text-[var(--wedding-ink)]' : 'text-[var(--wedding-cream)] group-hover:text-[var(--wedding-ink)]'}`}>{title}</span>
               </button>
               <div id={`beer-story-${number.replace('/', '-')}`} hidden={!isOpen} className={`px-4 pb-5 font-text text-base leading-7 sm:px-5 ${isOpen ? 'text-[var(--wedding-ink)]' : 'text-[var(--wedding-muted-dark)]'}`}>
                 <p className="sm:max-w-3xl">{description}</p>
