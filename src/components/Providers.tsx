@@ -90,7 +90,7 @@ export default function Providers() {
     <section id="fornitori" className="mx-auto max-w-5xl px-4 py-10" aria-labelledby="providers-title">
       <div className="text-center">
         <h2 id="providers-title" className="font-rockidate text-5xl text-[var(--wedding-cream)] sm:text-6xl">
-          I nostri fornitori
+          I nostri Fornitori
         </h2>
         <p className="mx-auto mt-5 max-w-2xl font-text text-base leading-8 text-[var(--wedding-cream)]/75 sm:text-lg">
           Le persone e le realtà che stanno rendendo speciale il nostro grande giorno.

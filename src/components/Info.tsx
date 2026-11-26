@@ -54,7 +54,7 @@ const Info: React.FC = () => {
       <section className="mx-auto grid w-full max-w-6xl gap-6 px-5 sm:px-8 md:grid-cols-[0.72fr_1.28fr] md:items-start md:gap-12" aria-labelledby="spoiler-title">
         <div>
           <p className="font-text text-[10px] font-bold uppercase tracking-[0.24em] text-[var(--wedding-amber)]">Il giorno del matrimonio</p>
-          <h2 id="spoiler-title" className="mt-2 font-text text-5xl font-bold leading-tight text-[var(--wedding-cream)] sm:text-6xl">Qualche Spoiler</h2>
+          <h2 id="spoiler-title" className="mt-2 font-rockidate text-5xl leading-tight text-[var(--wedding-cream)] sm:text-6xl">Qualche Spoiler</h2>
         </div>
         <div className="space-y-4 font-text text-base leading-7 text-[var(--wedding-cream)]/75 sm:space-y-6 sm:leading-8">
           <p>
