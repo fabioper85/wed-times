@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 
@@ -37,46 +36,48 @@ const stories = [
 
 export default function BeerStories() {
   const [openStory, setOpenStory] = useState<string | null>(null);
+  const [showAllStories, setShowAllStories] = useState(false);
 
   return (
-    <section className="mx-auto mt-24 max-w-4xl px-4 text-center" aria-labelledby="beer-stories-title">
-      <h2 id="beer-stories-title" className="font-rockidate text-5xl text-[#181411] sm:text-6xl">Le Beer Stories</h2>
-      <p className="mx-auto mt-6 max-w-3xl font-lexend-deca text-base leading-8 text-[#181411]/75 sm:text-lg sm:leading-9">
+    <section id="beer-stories" className="-mx-4 bg-[var(--wedding-ink-2)] px-4 py-12 text-center sm:py-16" aria-labelledby="beer-stories-title">
+      <h2 id="beer-stories-title" className="font-rockidate text-5xl text-[var(--wedding-cream)] sm:text-6xl">Le Beer Stories</h2>
+      <p className="mx-auto mt-6 max-w-3xl font-text text-base leading-8 text-[var(--wedding-cream)]/75 sm:text-lg sm:leading-9">
         Le BeerStories nascono da un’idea della sposa, che ha deciso di conservare le bottiglie più significative dei mesi di preparazione al matrimonio per trasformarle in decorazioni luminose disseminate qui e là a Cascina Reale. Aguzza la vista in location per trovarne il più possibile e leggi qui sotto la storia di ogni birretta, potrebbe esserci anche la tua! &lt;3.
       </p>
-      <div className="mt-10 overflow-hidden rounded-2xl border border-[#181411]/10 bg-white text-left">
-        {stories.map(([number, title, date, description]) => {
+      <div className="mx-auto mt-10 grid max-w-5xl gap-3 text-left sm:grid-cols-2 lg:grid-cols-3">
+        {stories.slice(0, showAllStories ? stories.length : 6).map(([number, title, date, description]) => {
           const isOpen = openStory === number;
           return (
-            <article key={number} className="border-b border-[#181411]/10 last:border-b-0">
+            <article key={number} className={`group border-2 transition-colors duration-200 hover:border-[var(--wedding-accent)] hover:bg-[var(--wedding-accent)] ${isOpen ? 'border-[var(--wedding-accent)] bg-[var(--wedding-accent)] lg:col-span-3' : 'border-[var(--wedding-cream)]'}`}>
               <button
                 type="button"
                 aria-expanded={isOpen}
                 aria-controls={`beer-story-${number.replace('/', '-')}`}
                 onClick={() => setOpenStory(isOpen ? null : number)}
-                className="flex w-full items-center gap-4 px-5 py-4 text-left transition-colors hover:bg-[var(--wedding-roadmap-icon-bg)]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#181411]/40 sm:px-7"
+                className="flex min-h-14 w-full flex-col gap-2 px-4 py-4 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[var(--wedding-amber)] sm:px-5"
               >
-                <span className="min-w-12 font-lexend-deca text-xs font-semibold tracking-[0.12em] text-[#181411]/50">{number}</span>
-                <span className="flex-1 font-lexend-deca text-base font-semibold text-[#181411] sm:text-lg">{title}</span>
-                <span className="hidden font-lexend-deca text-xs text-[#181411]/55 sm:block">{date}</span>
-                <ChevronDown className={`size-5 shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
+                <span className="flex w-full items-center gap-3">
+                  <span className={`shrink-0 font-text text-xs font-bold tracking-[0.12em] ${isOpen ? 'text-[var(--wedding-ink)]' : 'text-[var(--wedding-amber)] group-hover:text-[var(--wedding-ink)]'}`}>{number}</span>
+                  <span className={`font-text text-xs ${isOpen ? 'text-[var(--wedding-ink)] underline decoration-[var(--wedding-ink)] underline-offset-4' : 'text-[var(--wedding-muted-dark)] group-hover:text-[var(--wedding-ink)] group-hover:underline group-hover:decoration-[var(--wedding-ink)] group-hover:underline-offset-4'}`}>{date}</span>
+                  <ChevronDown className={`ml-auto size-5 shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180 text-[var(--wedding-ink)]' : 'text-[var(--wedding-cream)] group-hover:text-[var(--wedding-ink)]'}`} aria-hidden="true" />
+                </span>
+                <span className={`line-clamp-2 w-full font-text text-base font-bold sm:text-lg ${isOpen ? 'text-[var(--wedding-ink)]' : 'text-[var(--wedding-cream)] group-hover:text-[var(--wedding-ink)]'}`}>{title}</span>
               </button>
-              <div id={`beer-story-${number.replace('/', '-')}`} hidden={!isOpen} className="px-5 pb-5 pl-20 font-lexend-deca text-sm leading-7 text-[#181411]/70 sm:px-7 sm:pl-28 sm:text-base">
+              <div id={`beer-story-${number.replace('/', '-')}`} hidden={!isOpen} className={`px-4 pb-5 font-text text-base leading-7 sm:px-5 ${isOpen ? 'text-[var(--wedding-ink)]' : 'text-[var(--wedding-muted-dark)]'}`}>
                 <p className="sm:max-w-3xl">{description}</p>
               </div>
             </article>
           );
         })}
       </div>
-      <div className="mt-10 overflow-hidden rounded-2xl bg-white">
-        <Image
-          src="/images/bikers.jpg"
-          alt="Illustrazione di due motociclisti in viaggio"
-          width={1600}
-          height={1125}
-          className="h-auto w-full"
-        />
-      </div>
+      <button
+        type="button"
+        aria-expanded={showAllStories}
+        onClick={() => setShowAllStories((current) => !current)}
+        className="mt-8 min-h-12 border border-[var(--wedding-amber)] px-6 font-text text-base font-bold uppercase tracking-[0.2em] text-[var(--wedding-amber)] transition-colors hover:bg-[var(--wedding-amber)] hover:text-[var(--wedding-ink)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--wedding-cream)]"
+      >
+        {showAllStories ? 'Mostra meno' : `Tutte le ${stories.length} storie`}
+      </button>
     </section>
   );
 }

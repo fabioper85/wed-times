@@ -87,12 +87,12 @@ export default function Providers() {
   const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
 
   return (
-    <section className="mx-auto mt-24 max-w-5xl px-4" aria-labelledby="providers-title">
+    <section id="fornitori" className="mx-auto max-w-5xl px-4 py-10" aria-labelledby="providers-title">
       <div className="text-center">
-        <h2 id="providers-title" className="font-rockidate text-5xl text-[#181411] sm:text-6xl">
-          I nostri fornitori
+        <h2 id="providers-title" className="font-rockidate text-5xl text-[var(--wedding-cream)] sm:text-6xl">
+          I nostri Fornitori
         </h2>
-        <p className="mx-auto mt-5 max-w-2xl font-lexend-deca text-base leading-8 text-[#181411]/75 sm:text-lg">
+        <p className="mx-auto mt-5 max-w-2xl font-text text-base leading-8 text-[var(--wedding-cream)]/75 sm:text-lg">
           Le persone e le realtà che stanno rendendo speciale il nostro grande giorno.
         </p>
       </div>
@@ -107,11 +107,11 @@ export default function Providers() {
             onMouseLeave={() => setHoveredCategory(null)}
             onFocus={() => setHoveredCategory(provider.category)}
             onBlur={() => setHoveredCategory(null)}
-            className="font-lexend-deca text-sm uppercase tracking-[0.08em] text-[#181411] underline decoration-[#181411]/20 underline-offset-4 transition-[transform,color,text-shadow] duration-300 ease-out hover:-translate-y-0.5 hover:decoration-[#181411]/60 sm:text-base focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#181411]/40"
+            className="min-h-11 border border-[var(--wedding-cream)] px-4 py-2 font-text text-base tracking-[0.08em] text-[var(--wedding-cream)] transition-opacity hover:opacity-80 sm:text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--wedding-amber)]"
             style={{
               transform: hoveredCategory === provider.category ? 'scale(1.08)' : undefined,
               color: hoveredCategory === provider.category ? 'var(--wedding-accent)' : undefined,
-              textShadow: hoveredCategory === provider.category ? '0 6px 18px rgba(168, 68, 95, 0.2)' : undefined,
+              textShadow: hoveredCategory === provider.category ? '0 6px 18px rgba(251, 198, 66, 0.2)' : undefined,
             }}
           >
             {provider.category}
@@ -121,7 +121,7 @@ export default function Providers() {
 
       {selected ? (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-[#181411]/55 px-4 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-[var(--wedding-ink)]/85 px-4 backdrop-blur-sm"
           role="presentation"
           onClick={() => setSelected(null)}
         >
@@ -129,23 +129,23 @@ export default function Providers() {
             role="dialog"
             aria-modal="true"
             aria-labelledby="provider-dialog-category"
-            className="relative w-full max-w-md overflow-hidden rounded-[2rem] border border-[#181411]/10 bg-white shadow-[0_24px_80px_rgba(24,20,17,0.2)]"
+            className="relative w-full max-w-md overflow-hidden border-2 border-[var(--wedding-cream)] bg-[var(--wedding-ink-2)] text-[var(--wedding-cream)] shadow-[8px_8px_0_var(--wedding-amber)]"
             onClick={(event) => event.stopPropagation()}
           >
-            <div className="h-2 bg-[var(--wedding-roadmap-icon-bg)]" />
+            <div className="h-2 bg-[var(--wedding-amber)]" />
             <div className="p-6 text-center sm:p-8">
               <button
                 type="button"
                 aria-label="Chiudi dettagli fornitore"
                 onClick={() => setSelected(null)}
-                className="absolute right-5 top-5 rounded-full border border-[#181411]/10 bg-white p-2 text-[#181411]/55 transition-colors hover:bg-[var(--wedding-roadmap-icon-bg)] hover:text-[#181411] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#181411]/40"
+                className="absolute right-5 top-5 border-2 border-[var(--wedding-cream)] bg-[var(--wedding-ink-2)] p-2 text-[var(--wedding-cream)] transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--wedding-amber)]"
               >
                 <X aria-hidden="true" className="size-4" />
               </button>
-              <h3 id="provider-dialog-category" className="font-lexend-deca text-sm font-semibold uppercase tracking-[0.22em] text-[#181411]/55">
+              <h3 id="provider-dialog-category" className="font-lexend-deca text-sm font-bold uppercase tracking-[0.22em] text-[var(--wedding-cream)]/55">
                 {selected.category}
               </h3>
-              <p className="mt-2 font-lexend-deca text-3xl font-semibold leading-tight text-[#181411] sm:text-4xl">
+              <p className="mt-2 font-lexend-deca text-3xl font-bold leading-tight text-[var(--wedding-cream)] sm:text-4xl">
                 {selected.name}
               </p>
               <div className="mx-auto mt-4 h-px w-12 bg-[var(--wedding-accent)]/40" />
@@ -158,7 +158,7 @@ export default function Providers() {
                       target="_blank"
                       rel="noreferrer"
                       aria-label={`${tipoLink} di ${selected.name}`}
-                      className="inline-flex size-12 items-center justify-center rounded-2xl border border-[#181411]/10 bg-[#fffdf4] text-[#181411] shadow-[0_4px_12px_rgba(24,20,17,0.06)] transition-all hover:-translate-y-0.5 hover:border-[var(--wedding-accent)]/40 hover:bg-[var(--wedding-roadmap-icon-bg)]/45 hover:text-[var(--wedding-accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--wedding-accent)]"
+                      className="inline-flex size-12 items-center justify-center border-2 border-[var(--wedding-cream)] bg-[var(--wedding-ink)] text-[var(--wedding-cream)] transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--wedding-accent)]"
                     >
                       <Icon aria-hidden="true" className="size-5" />
                       <span className="sr-only">{tipoLink}</span>
@@ -166,7 +166,7 @@ export default function Providers() {
                   ))}
                 </div>
               ) : (
-                <p className="mt-4 font-lexend-deca text-sm text-[#181411]/65">
+                <p className="mt-4 font-text text-base text-[var(--wedding-cream)]/65">
                   Link in arrivo
                 </p>
               )}

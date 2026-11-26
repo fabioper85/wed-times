@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
-import { Lavishly_Yours, Lexend_Deca } from 'next/font/google'
+import { Courier_Prime, Lexend_Deca } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const lavishly = Lavishly_Yours({ 
-  weight: '400',
+const courierPrime = Courier_Prime({
+  weight: ['400', '700'],
   subsets: ['latin'],
-  variable: '--font-lavishly',
+  variable: '--font-text',
   display: 'swap',
 });
 
@@ -17,8 +17,8 @@ const lexend = Lexend_Deca({
 });
 
 export const metadata: Metadata = {
-  title: 'Fabio & Angie Wedding',
-  description: 'Join us in celebrating our special day',
+  title: 'Angie & Fabio — ci sposiamo',
+  description: 'Tutte le informazioni per festeggiare con Angie e Fabio il 29 maggio 2027 a Cascina Reale Cussanio, Fossano.',
   generator: 'v0.app',
   icons: {
     icon: [
@@ -45,8 +45,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={`${lavishly.variable} ${lexend.variable} font-lexend antialiased`}>
+    <html lang="it">
+      <body className={`${courierPrime.variable} ${lexend.variable} font-text antialiased`}>
         {children}
         <Analytics />
       </body>

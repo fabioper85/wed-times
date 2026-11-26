@@ -51,11 +51,13 @@ module.exports = {
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
       },
+      fontSize: {
+        base: '17px',
+      },
       fontFamily: {
-        lavishly: ['var(--font-lavishly)'],
-        'lexend-deca': ['var(--font-lexend-deca)'],
-        epilogue: ['var(--font-epilogue)'],
-        rockidate: ['Rockidate', 'cursive'],
+        text: ['var(--font-text)', 'Courier New', 'Courier', 'monospace'],
+        'lexend-deca': ['var(--font-lexend)', 'Arial', 'sans-serif'],
+        rockidate: ['Rockidate', 'Georgia', 'serif'],
       },
       keyframes: {
         'accordion-down': {
