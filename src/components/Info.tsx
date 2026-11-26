@@ -148,7 +148,7 @@ const Info: React.FC = () => {
           <div className="mx-auto mt-5 text-7xl leading-none" role="img" aria-label="Segnale di pericolo">
             ⚠️
           </div>
-          <h2 id="quizposi-title" className="mt-5 font-rockidate text-5xl uppercase leading-tight tracking-[-0.06em] text-[var(--wedding-cream)] sm:text-6xl">
+          <h2 id="quizposi-title" className="mt-5 max-w-full break-words font-text text-4xl uppercase leading-tight tracking-[0.08em] text-[var(--wedding-cream)] sm:text-6xl">
             QuizPosi
           </h2>
           <p className="mt-6 font-text text-2xl uppercase leading-8 text-[var(--wedding-amber)] sm:text-3xl">
