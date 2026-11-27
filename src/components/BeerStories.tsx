@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { motion, useReducedMotion } from 'motion/react';
 import { ChevronDown } from 'lucide-react';
 
 const stories = [
@@ -37,6 +38,7 @@ const stories = [
 export default function BeerStories() {
   const [openStory, setOpenStory] = useState<string | null>(null);
   const [showAllStories, setShowAllStories] = useState(false);
+  const prefersReducedMotion = useReducedMotion() ?? false;
 
   return (
     <section id="beer-stories" className="-mx-4 bg-[var(--wedding-ink-2)] px-4 py-12 text-center sm:py-16" aria-labelledby="beer-stories-title">
@@ -48,13 +50,14 @@ export default function BeerStories() {
         {stories.slice(0, showAllStories ? stories.length : 6).map(([number, title, date, description]) => {
           const isOpen = openStory === number;
           return (
-            <article key={number} className={`group border-2 transition-colors duration-200 hover:border-[var(--wedding-accent)] hover:bg-[var(--wedding-accent)] ${isOpen ? 'border-[var(--wedding-accent)] bg-[var(--wedding-accent)] lg:col-span-3' : 'border-[var(--wedding-cream)]'}`}>
-              <button
+            <motion.article key={number} layout={!prefersReducedMotion} transition={prefersReducedMotion ? { duration: 0 } : { layout: { type: 'spring', stiffness: 300, damping: 30 } }} className={`group border-2 transition-colors duration-200 hover:border-[var(--wedding-accent)] hover:bg-[var(--wedding-accent)] ${isOpen ? 'border-[var(--wedding-accent)] bg-[var(--wedding-accent)] lg:col-span-3' : 'border-[var(--wedding-cream)]'}`}>
+              <motion.button
                 type="button"
                 aria-expanded={isOpen}
                 aria-controls={`beer-story-${number.replace('/', '-')}`}
                 onClick={() => setOpenStory(isOpen ? null : number)}
                 className="flex min-h-14 w-full flex-col gap-2 px-4 py-4 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[var(--wedding-amber)] sm:px-5"
+                whileTap={prefersReducedMotion ? undefined : { scale: 0.99 }}
               >
                 <span className="flex w-full items-center gap-3">
                   <span className={`shrink-0 font-text text-xs font-bold tracking-[0.12em] ${isOpen ? 'text-[var(--wedding-ink)]' : 'text-[var(--wedding-amber)] group-hover:text-[var(--wedding-ink)]'}`}>{number}</span>
@@ -62,22 +65,23 @@ export default function BeerStories() {
                   <ChevronDown className={`ml-auto size-5 shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180 text-[var(--wedding-ink)]' : 'text-[var(--wedding-cream)] group-hover:text-[var(--wedding-ink)]'}`} aria-hidden="true" />
                 </span>
                 <span className={`line-clamp-2 w-full font-text text-base font-bold sm:text-lg ${isOpen ? 'text-[var(--wedding-ink)]' : 'text-[var(--wedding-cream)] group-hover:text-[var(--wedding-ink)]'}`}>{title}</span>
-              </button>
+              </motion.button>
               <div id={`beer-story-${number.replace('/', '-')}`} hidden={!isOpen} className={`px-4 pb-5 font-text text-base leading-7 sm:px-5 ${isOpen ? 'text-[var(--wedding-ink)]' : 'text-[var(--wedding-muted-dark)]'}`}>
                 <p className="sm:max-w-3xl">{description}</p>
               </div>
-            </article>
+            </motion.article>
           );
         })}
       </div>
-      <button
+      <motion.button
         type="button"
         aria-expanded={showAllStories}
         onClick={() => setShowAllStories((current) => !current)}
         className="mt-8 min-h-12 border border-[var(--wedding-amber)] px-6 font-text text-base font-bold uppercase tracking-[0.2em] text-[var(--wedding-amber)] transition-colors hover:bg-[var(--wedding-amber)] hover:text-[var(--wedding-ink)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--wedding-cream)]"
+        whileTap={prefersReducedMotion ? undefined : { scale: 0.98 }}
       >
         {showAllStories ? 'Mostra meno' : `Tutte le ${stories.length} storie`}
-      </button>
+      </motion.button>
     </section>
   );
 }

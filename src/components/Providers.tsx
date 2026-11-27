@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { Globe, Instagram, X } from 'lucide-react';
 
 type ProviderLink = {
@@ -84,7 +85,7 @@ const providers: Provider[] = [
 
 export default function Providers() {
   const [selected, setSelected] = useState<Provider | null>(null);
-  const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
+  const prefersReducedMotion = useReducedMotion() ?? false;
 
   return (
     <section id="fornitori" className="mx-auto max-w-5xl px-4 py-10" aria-labelledby="providers-title">
@@ -99,39 +100,43 @@ export default function Providers() {
 
       <div className="mx-auto mt-10 flex max-w-4xl flex-wrap items-center justify-center gap-x-3 gap-y-2 sm:gap-x-4 sm:gap-y-3">
         {providers.map((provider) => (
-          <button
+          <motion.button
             key={provider.category}
             type="button"
             onClick={() => setSelected(provider)}
-            onMouseEnter={() => setHoveredCategory(provider.category)}
-            onMouseLeave={() => setHoveredCategory(null)}
-            onFocus={() => setHoveredCategory(provider.category)}
-            onBlur={() => setHoveredCategory(null)}
             className="min-h-11 border border-[var(--wedding-cream)] px-4 py-2 font-text text-base tracking-[0.08em] text-[var(--wedding-cream)] transition-opacity hover:opacity-80 sm:text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--wedding-amber)]"
-            style={{
-              transform: hoveredCategory === provider.category ? 'scale(1.08)' : undefined,
-              color: hoveredCategory === provider.category ? 'var(--wedding-accent)' : undefined,
-              textShadow: hoveredCategory === provider.category ? '0 6px 18px rgba(251, 198, 66, 0.2)' : undefined,
-            }}
+            whileHover={prefersReducedMotion ? { color: 'var(--wedding-accent)' } : { scale: 1.08, color: 'var(--wedding-accent)', textShadow: '0 6px 18px rgba(251, 198, 66, 0.2)' }}
+            whileFocus={prefersReducedMotion ? { color: 'var(--wedding-accent)' } : { scale: 1.08, color: 'var(--wedding-accent)', textShadow: '0 6px 18px rgba(251, 198, 66, 0.2)' }}
+            whileTap={prefersReducedMotion ? undefined : { scale: 0.97 }}
+            transition={{ type: 'spring', stiffness: 400, damping: 24 }}
           >
             {provider.category}
-          </button>
+          </motion.button>
         ))}
       </div>
 
-      {selected ? (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-[var(--wedding-ink)]/85 px-4 backdrop-blur-sm"
-          role="presentation"
-          onClick={() => setSelected(null)}
-        >
-          <div
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="provider-dialog-category"
-            className="relative w-full max-w-md overflow-hidden border-2 border-[var(--wedding-cream)] bg-[var(--wedding-ink-2)] text-[var(--wedding-cream)] shadow-[8px_8px_0_var(--wedding-amber)]"
-            onClick={(event) => event.stopPropagation()}
+      <AnimatePresence initial={false}>
+        {selected ? (
+          <motion.div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-[var(--wedding-ink)]/85 px-4 backdrop-blur-sm"
+            role="presentation"
+            onClick={() => setSelected(null)}
+            initial={prefersReducedMotion ? false : { opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: prefersReducedMotion ? 0 : 0.18, ease: 'easeOut' }}
           >
+            <motion.div
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="provider-dialog-category"
+              className="relative w-full max-w-md overflow-hidden border-2 border-[var(--wedding-cream)] bg-[var(--wedding-ink-2)] text-[var(--wedding-cream)] shadow-[8px_8px_0_var(--wedding-amber)]"
+              onClick={(event) => event.stopPropagation()}
+              initial={prefersReducedMotion ? false : { opacity: 0, scale: 0.96, y: 12 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, scale: 0.96, y: 8 }}
+              transition={{ duration: prefersReducedMotion ? 0 : 0.2, ease: 'easeOut' }}
+            >
             <div className="h-2 bg-[var(--wedding-amber)]" />
             <div className="p-6 text-center sm:p-8">
               <button
@@ -171,9 +176,10 @@ export default function Providers() {
                 </p>
               )}
             </div>
-          </div>
-        </div>
-      ) : null}
+          </motion.div>
+        </motion.div>
+        ) : null}
+      </AnimatePresence>
     </section>
   );
 }
