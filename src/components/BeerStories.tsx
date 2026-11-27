@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 
@@ -70,6 +71,15 @@ export default function BeerStories() {
           );
         })}
       </div>
+      <figure className="mx-auto mt-10 max-w-5xl overflow-hidden rounded-2xl bg-white">
+        <Image
+          src="/images/bikers.jpg"
+          alt="Caricatura di Angie e Fabio in moto, accompagnati da un gatto"
+          width={1600}
+          height={1125}
+          className="h-auto w-full"
+        />
+      </figure>
       <button
         type="button"
         aria-expanded={showAllStories}
