@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { Instagram, Star } from 'lucide-react';
 import Countdown from './Countdown';
 import Providers from './Providers';
@@ -113,6 +114,16 @@ const Info: React.FC = () => {
           </ol>
         </div>
       </section>
+
+      <figure className="mx-auto w-full max-w-5xl px-5 sm:px-8">
+        <Image
+          src="/images/rock-wedding.jpg"
+          alt="Illustrazione degli sposi mentre festeggiano insieme"
+          width={1600}
+          height={1131}
+          className="h-auto w-full"
+        />
+      </figure>
 
       <section id="musica" className="mx-auto grid w-full max-w-6xl gap-8 px-5 sm:px-8 md:grid-cols-2 md:items-start md:gap-16" aria-labelledby="music-title">
         <div>
